@@ -17,7 +17,9 @@
   <dt>等価、同一</dt>
   <dd>値とオブジェクトIDが同じ</dd>
 
-  <dt></dt>
-  <dd></dd>
-  <dd></dd>
+  <dt>Proc記述方</dt>
+  <dd>Proc.new {}</dd>
+  <dd>proc {}</dd>
+  <dd>lambda {}</dd>
+  <dd>-> {}</dd>
 </dl>
