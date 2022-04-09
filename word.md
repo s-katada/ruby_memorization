@@ -10,13 +10,12 @@
   <dd>プログラミング言語に標準的に定義されている型</dd>
   <dd>string,int,boolean,など</dd>
 
-  <dt></dt>
-  <dd></dd>
-  <dd></dd>
+  <dt>等値、同値</dt>
+  <dd>値が同じ</dd>
+  <dd>オブジェクトIDは異なる</dd>
 
-  <dt></dt>
-  <dd></dd>
-  <dd></dd>
+  <dt>等価、同一</dt>
+  <dd>値とオブジェクトIDが同じ</dd>
 
   <dt></dt>
   <dd></dd>
