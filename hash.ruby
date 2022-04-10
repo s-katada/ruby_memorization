@@ -113,3 +113,12 @@ p h.delete(:ef) #=> nil
 p h.delete(:ef) {|key|"#{key} Nothing"} #=> "ef Nothing"
 p h #=> {:cd=>"all"}
 
+### delete_if || reject #=> self || reject! #=> (self || nil) | keyとvalueをブロック引数としてブロック評価が真の要素をselfから削除する
+h = { 2 => "8" ,4 => "6" ,6 => "4" ,8 => "2" }
+
+p h.reject!{|key, value| key.to_i < value.to_i }   #=> { 6 => "4", 8 => "2" }
+p h                                                #=> { 6 => "4", 8 => "2" }
+
+p h.delete_if{|key, value| key.to_i < value.to_i } #=> { 6 => "4", 8 => "2" }
+p h.reject!{|key, value| key.to_i < value.to_i }   #=> nil
+
