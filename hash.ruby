@@ -153,3 +153,8 @@ h3 = h1
 p h1.equal?(h2) #=> false
 p h1.equal?(h3)
 
+### except(*keys) #=> object | 引数で指定されたkeyにマッチするもの以外のhashを返す
+h = { a: 100, b: 200, c: 300 }
+h.except(:a) #=> {b: 200, c: 300}
+
+### 
