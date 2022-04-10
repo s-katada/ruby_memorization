@@ -146,3 +146,10 @@ p h.empty? #=> false
 h2 = {}
 p h2.empty? #=> true
 
+### equal?(other) #=> boolean | selfとotherが等価、同一の時ttrueを返す
+h1 = {hoge: "hoge"}
+h2 = {hoge: "hoge"}
+h3 = h1
+p h1.equal?(h2) #=> false
+p h1.equal?(h3)
+
