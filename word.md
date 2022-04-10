@@ -25,4 +25,16 @@
   <dd>proc do |hash, key| do ~ end</dd>
   <dd>lambda {}</dd>
   <dd>-> {}</dd>
+
+  <dt></dt>
+  <dd></dd>
+
+  <dt></dt>
+  <dd></dd>
+
+  <dt></dt>
+  <dd></dd>
+
+  <dt></dt>
+  <dd></dd>
 </dl>
