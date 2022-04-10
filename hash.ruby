@@ -122,3 +122,12 @@ p h                                                #=> { 6 => "4", 8 => "2" }
 p h.delete_if{|key, value| key.to_i < value.to_i } #=> { 6 => "4", 8 => "2" }
 p h.reject!{|key, value| key.to_i < value.to_i }   #=> nil
 
+### dig(key, key2, key3, ...) #=> (nil || object) #=> 
+h = { foo: {bar: {baz: 1}}}
+
+p h.dig(:foo, :bar, :baz) # => 1
+p h.dig(:foo, :zot, :xyz) # => nil
+
+g = { foo: [10, 11, 12] }
+p g.dig(:foo) #=> [10, 11, 12]
+p g.dig(:foo, 1) # => 11
