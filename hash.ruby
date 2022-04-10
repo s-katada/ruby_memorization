@@ -132,7 +132,11 @@ g = { foo: [10, 11, 12] }
 p g.dig(:foo) #=> [10, 11, 12]
 p g.dig(:foo, 1) # => 11
 
-### each_key #=> object | hashのkeyを引数と取りブロックを評価する
+### each_key #=> object || Enumerator | hashのkeyを引数と取りブロックを評価する ブロックを渡さないとEnumratorが返される
 h = {:a => "a", :b => "b"}
 p h.each_key{|key| p key} #=> :a, :b
+
+### each_value #=> object || Enumerator | hashのvalueを引数で取りブロックを評価する ブロックを渡さないとEnumeratorが返される
+h = {:a => "a", :b => "b"}
+p h.each_value{|value| p value} #=> "a", "b"
 
