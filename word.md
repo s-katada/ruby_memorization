@@ -22,7 +22,7 @@
 
   <dt>Proc記述方</dt>
   <dd>Proc.new {}</dd>
-  <dd>proc {}</dd>
+  <dd>proc do |hash, key| do ~ end</dd>
   <dd>lambda {}</dd>
   <dd>-> {}</dd>
 </dl>
