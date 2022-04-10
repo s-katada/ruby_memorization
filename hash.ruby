@@ -18,7 +18,9 @@ p h[:ef] #=> nil
 ### self[key] = value || store(key, value) | keyに対してのvalueを設定する
 h = {}
 h[:key] = "value"
+h.store(:store, "store")
 p h[:key] #=> "value"
+p h[:store] #=> "store"
 
 ### assoc(key) #=> (array | nil) | ハッシュがkeyを持つ時、[key, value]の形式かnilで帰ってくる
 h = {"colors"  => ["red", "blue", "green"], "letters" => ["a", "b", "c" ]}
@@ -102,3 +104,12 @@ h.default_proc = proc do |hash, key|
   end
 end
 p h[15] #=> "FizzBuzz"
+
+### delete(key) #=> (object || nil) | keyに対応するvalueを削除する ブロックはkeyに対するvalueが存在しなかった時に実行される 破壊的
+h = {:ab => "some" , :cd => "all"}
+
+p h.delete(:ab) #=> "some"
+p h.delete(:ef) #=> nil
+p h.delete(:ef) {|key|"#{key} Nothing"} #=> "ef Nothing"
+p h #=> {:cd=>"all"}
+
