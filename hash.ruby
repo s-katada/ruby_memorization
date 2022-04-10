@@ -131,3 +131,8 @@ p h.dig(:foo, :zot, :xyz) # => nil
 g = { foo: [10, 11, 12] }
 p g.dig(:foo) #=> [10, 11, 12]
 p g.dig(:foo, 1) # => 11
+
+### each_key #=> object | hashのkeyを引数と取りブロックを評価する
+h = {:a => "a", :b => "b"}
+p h.each_key{|key| p key} #=> :a, :b
+
