@@ -140,3 +140,9 @@ p h.each_key{|key| p key} #=> :a, :b
 h = {:a => "a", :b => "b"}
 p h.each_value{|value| p value} #=> "a", "b"
 
+### empty? #=> boolean | hashがからの時trueを返す
+h = {hoge: "hoge"}
+p h.empty? #=> false
+h2 = {}
+p h2.empty? #=> true
+
