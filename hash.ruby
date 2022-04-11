@@ -238,3 +238,8 @@ h = {hoge: "hoge", fugo: "fugo", poge: 123}
 p h.to_s #=> "{:ab=>\"some\", :cb=>\"all\", :ef=>\"hoge\"}"
 p h.inspect #=> "{:ab=>\"some\", :cb=>\"all\", :ef=>\"hoge\"}"
 
+### invert #=> object | keyとvalueを入れ替えたhashを返す
+# valueがかぶっている時は最後に定義されているものでhashが生成される
+h = { "a" => 0, "b" => 100, "c" => 200, "d" => 300, "e" => 300 }
+p h.invert #=> {0=>"a", 100=>"b", 200=>"c", 300=>"e"}
+
