@@ -247,3 +247,11 @@ p h.invert #=> {0=>"a", 100=>"b", 200=>"c", 300=>"e"}
 h1 = { "a" => 100, 2 => ["some"], :c => "c" }
 p h1.keys #=> ["a", 2, :c]
 
+### length || size #=> integer | hashのの要素の数を返す
+h = { "d" => 100, "a" => 200, "v" => 300, "e" => 400 }
+h.length      #=> 4
+h.size        #=> 4
+h.delete("a") #=> 200
+h.length      #=> 3
+h.size        #=> 3
+
