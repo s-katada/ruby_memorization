@@ -33,7 +33,8 @@ h[:some] = "some"
 p h.clear #=> {}
 p h.default #=> "default value"
 
-### clone || dup #=> {} | selfと同じ内容を持つオブジェクトを返す 浅いコピー identityは違う(と思われる)
+### clone || dup #=> {} | selfと同じ内容を持つオブジェクトを返す
+# 浅いコピー identityは違う(と思われる)
 h1 = {"have" => "have a", "as" => "as a"}
 h2 = h1.dup #=> h1
 h2["have"] = "has"
@@ -65,7 +66,8 @@ p h1.compare_by_identity? #=> false
 h1.compare_by_identity
 p h1.compare_by_identity? #=> true
 
-### default #=> ({} || nil) | hashのdefault値を設定する Hash.newにブロックを渡すとselfとkeyをブロックに渡して評価する
+### default #=> ({} || nil) | hashのdefault値を設定する
+# Hash.newにブロックを渡すとselfとkeyをブロックに渡して評価する
 h = Hash.new("default")
 p h.default #=> "default"
 p h.default(:some) #=> "default"
@@ -81,7 +83,8 @@ p h.default #=> nil
 p h.default = "default"
 p h #=> {}
 
-### default_proc #=> ({} || nil) | hashのdefault値を返すProcオブジェクトを生成し返す hashがProcオブジェクトのdefault値を返さない時nilを返す
+### default_proc #=> ({} || nil) | hashのdefault値を返すProcオブジェクトを生成し返す
+# hashがProcオブジェクトのdefault値を返さない時nilを返す
 h = Hash.new{|hash, key| "This is chodoii honda in order to #{hash[key]}"}
 proc = h.default_proc #=> Procオブジェクト
 p proc.yield({hoge: "hoge"}, :hoge) #=> "This is chodoii honda in order to hoge"
@@ -89,7 +92,8 @@ p proc.yield({hoge: "hoge"}, :hoge) #=> "This is chodoii honda in order to hoge"
 h = Hash.new("default")
 p h.default_proc #=> nil
 
-### default_proc=(value) #=> Proc | hashのdefault値をProcに変更する hashのdefault値はなんでも良い
+### default_proc=(value) #=> Proc | hashのdefault値をProcに変更する
+# hashのdefault値はなんでも良い
 h = {}
 h.default_proc = proc do |hash, key|
   hash[key] = case
@@ -105,7 +109,8 @@ h.default_proc = proc do |hash, key|
 end
 p h[15] #=> "FizzBuzz"
 
-### delete(key) #=> (object || nil) | keyに対応するvalueを削除する ブロックはkeyに対するvalueが存在しなかった時に実行される 破壊的
+### delete(key) #=> (object || nil) | keyに対応するvalueを削除する
+# ブロックはkeyに対するvalueが存在しなかった時に実行される 破壊的
 h = {:ab => "some" , :cd => "all"}
 
 p h.delete(:ab) #=> "some"
@@ -122,7 +127,8 @@ p h                                                #=> { 6 => "4", 8 => "2" }
 p h.delete_if{|key, value| key.to_i < value.to_i } #=> { 6 => "4", 8 => "2" }
 p h.reject!{|key, value| key.to_i < value.to_i }   #=> nil
 
-### dig(key, key2, key3, ...) #=> (nil || object) #=> 
+### dig(key, key2, key3, ...) #=> (nil || object) #=> self以下のネストしたオブジェクトを再起的に参照する
+# 途中のオブジェクトがnilの時nilを返す
 h = { foo: {bar: {baz: 1}}}
 
 p h.dig(:foo, :bar, :baz) # => 1
@@ -132,11 +138,13 @@ g = { foo: [10, 11, 12] }
 p g.dig(:foo) #=> [10, 11, 12]
 p g.dig(:foo, 1) # => 11
 
-### each_key #=> object || Enumerator | hashのkeyを引数と取りブロックを評価する ブロックを渡さないとEnumratorが返される
+### each_key #=> object || Enumerator | hashのkeyを引数と取りブロックを評価する
+# ブロックを渡さないとEnumratorが返される
 h = {:a => "a", :b => "b"}
 p h.each_key{|key| p key} #=> :a, :b
 
-### each_value #=> object || Enumerator | hashのvalueを引数で取りブロックを評価する ブロックを渡さないとEnumeratorが返される
+### each_value #=> object || Enumerator | hashのvalueを引数で取りブロックを評価する
+# ブロックを渡さないとEnumeratorが返される
 h = {:a => "a", :b => "b"}
 p h.each_value{|value| p value} #=> "a", "b"
 
@@ -181,3 +189,8 @@ p h.fetch_values("cat") #=> ["feline"]
 # p h.fetch_values("hoge") #=> keyError
 p h.fetch_values("hoge") {|key| "#{key} is not exist"} #=> ["hoge is not exist"]
 p h.fetch_values("cow", "bird") {|key| key.upcase} #=> ["bovine", "BIRD"]
+
+### select || filter #=> hash | ブロックで真と評価されたペアだけを含むhashを返す
+h = { "a" => 100, "b" => 200, "c" => 300 }
+p h.select {|key, value| key > "a"} #=> {"b" => 200, "c" => 300}
+p h.select {|key, value| value < 200} #=> {"a" => 100}
