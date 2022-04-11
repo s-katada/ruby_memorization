@@ -164,11 +164,20 @@ h.except(:a) #=> {b: 200, c: 300}
 h = {one: nil, two: "two"}
 p h[:one], h[:two], h[:three] #=> nil, "two", nil
 p h.fetch(:one), h.fetch(:two) #=> nil. "two"
-p h.fetch(:three) #=> error: key not found
+# p h.fetch(:three) #=> error: key not found
 p h.fetch(:three, "default") #=> "default"
 p h.fetch(:three) {|key| "#{key} is not exist"}
 p h.fetch(:three, "error"){|key| #=> "three not exist"
   "#{key} not exist"
 }
 h.default = "default"
-p h.fetch(:three) #=> error
+# p h.fetch(:three) #=> error
+
+### featch_values(key, ...) #=> object | 引数で指定されたkeyに関連づけられたvalueの配列を返す
+# keyに関連づいたvalueがない場合はブロックを評価して返す
+# ブロックがない時はkeyErrorを返す
+h = { "cat" => "feline", "dog" => "canine", "cow" => "bovine" }
+p h.fetch_values("cat") #=> ["feline"]
+# p h.fetch_values("hoge") #=> keyError
+p h.fetch_values("hoge") {|key| "#{key} is not exist"} #=> ["hoge is not exist"]
+p h.fetch_values("cow", "bird") {|key| key.upcase} #=> ["bovine", "BIRD"]
