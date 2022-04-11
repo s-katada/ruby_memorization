@@ -232,3 +232,9 @@ p a.hash #=> 3314123329268928184
 h = {:ab => "some" , :cd => "all" , :ef => "all"}
 h.key("some") #=> :ab
 h.key("hoge") #=> nil
+
+### to_s || inspect #=> string | 人間が読みやすい文字列が帰ってくる
+h = {hoge: "hoge", fugo: "fugo", poge: 123}
+p h.to_s #=> "{:ab=>\"some\", :cb=>\"all\", :ef=>\"hoge\"}"
+p h.inspect #=> "{:ab=>\"some\", :cb=>\"all\", :ef=>\"hoge\"}"
+
