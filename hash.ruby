@@ -289,3 +289,7 @@ a[0] = "z"
 p h[a]       #=> nil
 p h.rehash   #=> {["z", "b"] => 100}
 p h[a]       #=> 100
+
+### reject{|key, value| ... } #=> hash | selfを複製してブロックで評価した値が真になる要素を削除したhashを返す
+h = { 2 =>"8" ,4 =>"6" ,6 =>"4" ,8 =>"2" }
+p h.reject{ |key, value| key > value.to_i } #=> {2 => "8",  4 => "6"}
