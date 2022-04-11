@@ -201,3 +201,12 @@ h = { "a" => 100, "b" => 200, "c" => 300 }
 p h.keep_if {|key, value| key > "a"} #=> {"b"=>200, "c"=>300}
 p h.select! {|key, value| key > "a"} #=> nil
 p h.filter! {|key, value| value > 200} #=> {"c"=>300}
+
+### flatten(lebel) #=> array | 自信を平坦化したarrayを返す
+a =  {1=> "one", 2 => [2,"two"], 3 => "three"}
+p a.flatten #=> [1, "one", 2, [2, "two"], 3, "three"]
+p a.flatten(1) #=> [1, "one", 2, [2, "two"], 3, "three"]
+p a.flatten(2) #=> [1, "one", 2, 2, "two", 3, "three"]
+p a.flatten(0) #=> [[1, "one"], [2, [2, "two"]], [3, "three"]]
+p a.flatten(-1) #=> [1, "one", 2, 2, "two", 3, "three"]
+
