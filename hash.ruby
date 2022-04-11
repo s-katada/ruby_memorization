@@ -227,3 +227,8 @@ p a.hash #=> -4345107025984234871
 a[1] = :x
 p a.hash #=> 3314123329268928184
 
+### key(value) || index(value) #=> (object || nil) | valueに対するkeyを返す
+# indexメソッドはレガシーなのでversionによっては使えない可能性がある
+h = {:ab => "some" , :cd => "all" , :ef => "all"}
+h.key("some") #=> :ab
+h.key("hoge") #=> nil
