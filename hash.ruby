@@ -315,6 +315,11 @@ h = { a: 100, b: 200, c: 300 }
 p h.slice(:a) #=> {:a => 100}
 p h.slice(:b, :c) #=> {:b => 200, :c => 300}
 
-### to_a #=> array | keyとvalueの2要素からなる配列を並べた配列を返す
+### to_a #=> [array] | keyとvalueの2要素からなる配列を並べた配列を返す
 h1 = { "a" => 100, 2 => ["some"], :c => "c" }
 p h1.to_a #=> [["a", 100], [2, "some"], [:c, "c"]]
+
+### to_h #=> hash |  selfを返す
+hash = { "a" => 97, "b" => 98 }
+p hash.to_h {|key, value| [key.upcase, value-32] } # => {"A"=>65, "B"=>66}
+
