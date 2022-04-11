@@ -293,3 +293,11 @@ p h[a]       #=> 100
 ### reject{|key, value| ... } #=> hash | selfを複製してブロックで評価した値が真になる要素を削除したhashを返す
 h = { 2 =>"8" ,4 =>"6" ,6 =>"4" ,8 =>"2" }
 p h.reject{ |key, value| key > value.to_i } #=> {2 => "8",  4 => "6"}
+
+### replace(other) #=> self | hashの内容をotherで置き換える 破壊的
+# default値もotherの内容になり、otherがhashでない時はto_hメソッドを使って暗黙的にhash変換を試みる
+foo = {1 => 'a', 2 => 'b'}
+bar = {2 => 'B', 3 => 'C'}
+foo.replace(bar)
+p foo #=> {2 => "B", 3 => "C"}
+
