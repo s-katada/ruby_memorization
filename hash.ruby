@@ -301,3 +301,11 @@ bar = {2 => 'B', 3 => 'C'}
 foo.replace(bar)
 p foo #=> {2 => "B", 3 => "C"}
 
+### shift #=> ([key, value] || nil) | hashからkeyが追加された順で[key, value]という形式の配列を返す 破壊的
+# hashが空の時はdefault値を返す
+# version3.2以降はdefault値が設定されていてもnilになる予定
+h = {:ab => "some" , :cd => "all"}
+p h.shift #=> [:ab, "some"]
+p h       #=> {:cb=> "all"}
+p h.shift #=> [:cb, "all"]
+p h.shift #=> nil
