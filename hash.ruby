@@ -213,5 +213,11 @@ p a.flatten(-1) #=> [1, "one", 2, 2, "two", 3, "three"]
 ### hash_key?(key) | include?(key) | key?(key) | member?(key) #=> boolean | selfが引数に指定したkeyを持っているかどうか
 h = {hoge: "hoge", fugo: "fugo", nil: nil}
 p h.has_key?(:hoge) #=> true
-p h.has_key?("hoge") #=> false
+p h.key?("hoge") #=> false
+
+### has_value?(value) | value?(value) #=> boolean | selfが引数に指定したvalueを持っているかどうか
+h = {hoge: "hoge", poge: "poge", number: 123}
+p h.has_value?("hoge") #=> true
+p h.has_value?(123) #=> true
+p h.value?(12) #=> false
 
