@@ -255,3 +255,12 @@ h.delete("a") #=> 200
 h.length      #=> 3
 h.size        #=> 3
 
+### merge(*others) #=> hash || merge(*others) {|key, self_value, other_value| ... } #=> hash | selfとothersを~~~順番に~~~マージした結果を返す
+# ブロックを追加するとkeyがダブった時の処理を加えることができる
+h1 = { "a" => 100, "b" => 200 }
+h2 = { "b" => 246, "c" => 300 }
+h3 = { "b" => 357, "d" => 400 }
+p h1.merge #=> {"a"=>100, "b"=>200}
+p h1.merge(h2) #=> {"a"=>100, "b"=>246, "c"=>300}
+p h1.merge(h2, h3) #=? { "a" => 100, "b" => 357, "c" => 300, "d" => 400 }
+p h1.merge(h2, h3) {|key, old_value, new_value| new_value - old_value} #=> { "a" => 100, "b" => 311, "c" => 300, "d" => 400 }
