@@ -210,3 +210,8 @@ p a.flatten(2) #=> [1, "one", 2, 2, "two", 3, "three"]
 p a.flatten(0) #=> [[1, "one"], [2, [2, "two"]], [3, "three"]]
 p a.flatten(-1) #=> [1, "one", 2, 2, "two", 3, "three"]
 
+### hash_key?(key) | include?(key) | key?(key) | member?(key) #=> boolean | selfが引数に指定したkeyを持っているかどうか
+h = {hoge: "hoge", fugo: "fugo", nil: nil}
+p h.has_key?(:hoge) #=> true
+p h.has_key?("hoge") #=> false
+
