@@ -157,4 +157,18 @@ p h1.equal?(h3)
 h = { a: 100, b: 200, c: 300 }
 h.except(:a) #=> {b: 200, c: 300}
 
-### 
+### fetch(key, default = nil) #=> value || nil | keyに関連づけられたvalueを返す 
+# hashに初期設定されているdefault値は無視される
+# 第二引数にdefault値を設定しておくとkeyに対するvalueが存在しない時第二引数であるdefault値を返す
+# ブロックを渡しておくとkeyに対応するvalueがない時ブロックを実行する
+h = {one: nil, two: "two"}
+p h[:one], h[:two], h[:three] #=> nil, "two", nil
+p h.fetch(:one), h.fetch(:two) #=> nil. "two"
+p h.fetch(:three) #=> error: key not found
+p h.fetch(:three, "default") #=> "default"
+p h.fetch(:three) {|key| "#{key} is not exist"}
+p h.fetch(:three, "error"){|key| #=> "three not exist"
+  "#{key} not exist"
+}
+h.default = "default"
+p h.fetch(:three) #=> error
