@@ -309,3 +309,8 @@ p h.shift #=> [:ab, "some"]
 p h       #=> {:cb=> "all"}
 p h.shift #=> [:cb, "all"]
 p h.shift #=> nil
+
+### slice(*keys) #=> hash | 引数で指定されたkeyとそのvalueを含むhashを返す
+h = { a: 100, b: 200, c: 300 }
+p h.slice(:a) #=> {:a => 100}
+p h.slice(:b, :c) #=> {:b => 200, :c => 300}
