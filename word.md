@@ -29,8 +29,8 @@
   <dt>再起的</dt>
   <dd>プログラムを実行中に自分自身を参照すること</dd>
 
-  <dt></dt>
-  <dd></dd>
+  <dt>obsolete</dt>
+  <dd>廃止</dd>
 
   <dt></dt>
   <dd></dd>
