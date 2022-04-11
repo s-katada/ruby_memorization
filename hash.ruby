@@ -22,12 +22,12 @@ h.store(:store, "store")
 p h[:key] #=> "value"
 p h[:store] #=> "store"
 
-### assoc(key) #=> (array | nil) | ハッシュがkeyを持つ時、[key, value]の形式かnilで帰ってくる
+### assoc(key) #=> (array | nil) | ハッシュが引数に渡したkeyを持つ時、[key, value]の形式かnilで帰ってくる
 h = {"colors"  => ["red", "blue", "green"], "letters" => ["a", "b", "c" ]}
 p h.assoc("letters") #=> ["letters", ["a", "b", "c"]]
 p h.assoc("foo") #=> nil
 
-### clear #=> {} | ハッシュの中身をクリアにする default値はクリアされない
+### clear #=> {} | ハッシュの中身をクリアにする default値はクリアされない 破壊的
 h = Hash.new("default value")
 h[:some] = "some"
 p h.clear #=> {}
@@ -60,7 +60,7 @@ p h1["a"] #=> nil
 p h1[hoge] #=> 100
 p h1[:c] #=> 400
 
-### compare_by_identity #=> bool | hashからkeyでvalueを取得する時に同一性で判断しているかを確認するメソッド
+### compare_by_identity #=> bool | hashからkeyでvalueを取得する時に等価、同一性で判断しているかを確認するメソッド
 h1 = { "a" => 100, "b" => 200, :c => 400 }
 p h1.compare_by_identity? #=> false
 h1.compare_by_identity
@@ -181,7 +181,7 @@ p h.fetch(:three, "error"){|key| #=> "three not exist"
 h.default = "default"
 # p h.fetch(:three) #=> error
 
-### featch_values(key, ...) #=> object | 引数で指定されたkeyに関連づけられたvalueの配列を返す
+### fetch_values(key, ...) #=> object | 引数で指定されたkeyに関連づけられたvalueの配列を返す
 # keyに関連づいたvalueがない場合はブロックを評価して返す
 # ブロックがない時はkeyErrorを返す
 h = { "cat" => "feline", "dog" => "canine", "cow" => "bovine" }
@@ -210,7 +210,7 @@ p a.flatten(2) #=> [1, "one", 2, 2, "two", 3, "three"]
 p a.flatten(0) #=> [[1, "one"], [2, [2, "two"]], [3, "three"]]
 p a.flatten(-1) #=> [1, "one", 2, 2, "two", 3, "three"]
 
-### hash_key?(key) | include?(key) | key?(key) | member?(key) #=> boolean | selfが引数に指定したkeyを持っているかどうか
+### has_key?(key) | include?(key) | key?(key) | member?(key) #=> boolean | selfが引数に指定したkeyを持っているかどうか
 h = {hoge: "hoge", fugo: "fugo", nil: nil}
 p h.has_key?(:hoge) #=> true
 p h.key?("hoge") #=> false
@@ -279,3 +279,13 @@ p h2 #=> {"b"=>357, "c"=>300, "d"=>400}
 a = {1=> "one", 2 => "two", 3 => "three", "ii" => "two"}
 p a.rassoc("one") #=> [2, "two"]
 p a.rassoc("hoge") #=> nil
+
+### rehash #=> self | keyのhash値を再計算する
+# keyになっているオブジェクトが変化した時にrehashを使用しないとそのkeyに対するvalueを取り出すことができない
+a = [ "a", "b" ]
+h = { a => 100 }
+p h[a]       #=> 100
+a[0] = "z"
+p h[a]       #=> nil
+p h.rehash   #=> {["z", "b"] => 100}
+p h[a]       #=> 100
