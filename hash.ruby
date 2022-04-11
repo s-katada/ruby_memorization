@@ -274,3 +274,8 @@ p h1.merge!(h2) #=> {"a"=>100, "b"=>246, "c"=>300}
 p h1 #=> {"a"=>100, "b"=>246, "c"=>300}
 p h2.update(h3) #=> {"b"=>357, "c"=>300, "d"=>400}
 p h2 #=> {"b"=>357, "c"=>300, "d"=>400}
+
+### rassoc(value) #=> array || nil | hash内を検索して引数に渡したvalueと一致する組みを配列で返す
+a = {1=> "one", 2 => "two", 3 => "three", "ii" => "two"}
+p a.rassoc("one") #=> [2, "two"]
+p a.rassoc("hoge") #=> nil
