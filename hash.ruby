@@ -320,6 +320,11 @@ h1 = { "a" => 100, 2 => ["some"], :c => "c" }
 p h1.to_a #=> [["a", 100], [2, "some"], [:c, "c"]]
 
 ### to_h #=> hash |  selfを返す
+# ブロックを渡すと各ペアでブロックを呼び出しその結果をペアとして処理しhashで返す
 hash = { "a" => 97, "b" => 98 }
 p hash.to_h {|key, value| [key.upcase, value-32] } # => {"A"=>65, "B"=>66}
 
+### to_hash #=> hash | selfを返す ブロック処理はない
+hash = {}
+p hash.to_hash #=> {}
+p hash.to_hash == hash #=> true
