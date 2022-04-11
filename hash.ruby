@@ -221,3 +221,9 @@ p h.has_value?("hoge") #=> true
 p h.has_value?(123) #=> true
 p h.value?(12) #=> false
 
+### hash #=> integer | 自身が保持するkeyとvalueのハッシュ値を元にして算出した数値を返す
+a = {}
+p a.hash #=> -4345107025984234871
+a[1] = :x
+p a.hash #=> 3314123329268928184
+
