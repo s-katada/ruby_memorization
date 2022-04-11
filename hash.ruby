@@ -194,3 +194,10 @@ p h.fetch_values("cow", "bird") {|key| key.upcase} #=> ["bovine", "BIRD"]
 h = { "a" => 100, "b" => 200, "c" => 300 }
 p h.select {|key, value| key > "a"} #=> {"b" => 200, "c" => 300}
 p h.select {|key, value| value < 200} #=> {"a" => 100}
+
+### keep_if #=> self || select! #=> (nil | self) || filter! (nil | self) | keyとvalueを引数としたvalueを評価して真となった要素をselfに残す 破壊的
+# select!とfilter!はselfに変更があればselfを返し、なければnilを返す
+h = { "a" => 100, "b" => 200, "c" => 300 }
+p h.keep_if {|key, value| key > "a"} #=> {"b"=>200, "c"=>300}
+p h.select! {|key, value| key > "a"} #=> nil
+p h.filter! {|key, value| value > 200} #=> {"c"=>300}
