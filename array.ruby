@@ -30,3 +30,7 @@ p b #=> ["HOGE", "hoge", "hoge"]
 p Array.try_convert([1]) #=> [1]
 p Array.try_convert("a") #=> nil
 
+### self & other #=> array | 積集合 両方の配列に含まれる要素を新しい配列にして返す 重複する要素は取り除かれる
+p [1,1,2,3] & [1,3] #=> [1, 3]
+
+###
