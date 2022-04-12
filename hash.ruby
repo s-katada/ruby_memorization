@@ -350,3 +350,6 @@ h = {a: 1, b: 2, c: 3}
 p h.transform_values{|value| value.to_s} #=> {:a=> "1", :b=>"2", :c=>"3"}
 p h #=> {:a=>1, :b=>2, :c=>3}
 
+### transform_values!{|value| ... } #=> self | hashのvalueを変更する 破壊的
+h = {a: 1, b: 2, c: 3}
+p h.transform_values{|value| value.to_s} #=> {:a=>"1", :b=>"2", :c=>"3"}
