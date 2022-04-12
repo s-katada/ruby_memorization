@@ -1,6 +1,6 @@
 # Arrayメソッド一覧
 
-### Array.new(size, value) #=> array | valueを3つ持ったarrayオブジェクトを返す
+### Array.new(size, value) #=> array | valueをsize個持ったarrayオブジェクトを返す
 # 全要素が同じオブジェクトを参照している
 ary = Array.new(3, "hoge")
 p ary #=> ["hoge", "hoge", "hoge"]
@@ -14,3 +14,14 @@ b = Array.new(a)
 a.each{|value| value.upcase!}
 p a #=> ["A", "B", "C"]
 p b #=> ["A", "B", "C"]
+
+### Array.new(size){|index| ... } #=> array | それぞれ違うオブジェクトのvalueをsize個持つarrayオブジェクトを返す
+a = Array.new(3) {|index| index}
+p a #=> [0,1,2]
+
+b = Array.new(3) {"hoge"}
+p b #=> ["hoge", "hoge", "hoge"]
+c = b
+b[0].upcase!
+p b #=> ["HOGE", "hoge", "hoge"]
+
