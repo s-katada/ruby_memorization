@@ -357,3 +357,7 @@ p h.transform_values{|value| value.to_s} #=> {:a=>"1", :b=>"2", :c=>"3"}
 ### values #=> array | すべてのkeyに対するすべてのvalueを配列で返す
 h = {hoge: "hoge", fugo: "fugo", poge: "poge"}
 p h.values #=> ["hoge", "fugo", "poge"]
+
+### values_at(*keys) #=> array | 引数で指定されたkeyに対応するvalueをarrayで返す
+h = {hoge: "hoge", fugo: "fugo", poge: "poge"}
+p h.values_at(:hoge, :fugo, :poge, :hego) #=> ["hoge", "fugo", "poge", nil]
