@@ -353,3 +353,7 @@ p h #=> {:a=>1, :b=>2, :c=>3}
 ### transform_values!{|value| ... } #=> self | hashのvalueを変更する 破壊的
 h = {a: 1, b: 2, c: 3}
 p h.transform_values{|value| value.to_s} #=> {:a=>"1", :b=>"2", :c=>"3"}
+
+### values #=> array | すべてのkeyに対するすべてのvalueを配列で返す
+h = {hoge: "hoge", fugo: "fugo", poge: "poge"}
+p h.values #=> ["hoge", "fugo", "poge"]
