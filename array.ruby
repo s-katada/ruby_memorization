@@ -51,3 +51,8 @@ b = [3,5]
 c = [1,4]
 p a - b #=> [1,1,2,4,4,4]
 p a - c #=> [2,3,5]
+
+### self << obj #=> array | selfにobjを破壊的に追加する
+a = ["hoge", "fugo"]
+a << :poge
+p a #=> ["hoge", "fugo", :poge]
