@@ -32,8 +32,8 @@
   <dt>obsolete</dt>
   <dd>廃止</dd>
 
-  <dt></dt>
-  <dd></dd>
+  <dt>Procオブジェクトに&</dt>
+  <dd>メソッドにブロック引数であることを伝える役割がある</dd>
 
   <dt></dt>
   <dd></dd>
