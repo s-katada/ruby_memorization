@@ -343,4 +343,10 @@ p h.transform_keys.with_index{|key, index| "#{key}.#{index}"}
 
 ### transform_keys! {|key| ...} #=> self | hashのkeyを変更する 破壊的
 h = {a: 1, b: 2, c: 3}
-p h.transform_keys{|key| key.upcase}
+p h.transform_keys{|key| key.upcase} #=> {"a"=>1, "b"=>2, "c"=>3}
+
+### transform_values{|value| ... } #=> hash | すべてのvalueに対してブロックを呼び出した結果に置き換える
+h = {a: 1, b: 2, c: 3}
+p h.transform_values{|value| value.to_s} #=> {:a=> "1", :b=>"2", :c=>"3"}
+p h #=> {:a=>1, :b=>2, :c=>3}
+
