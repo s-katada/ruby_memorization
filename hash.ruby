@@ -1,4 +1,4 @@
-## Hashメソッド一覧ß
+## Hashメソッド一覧
 
 ### self.eql?(other) #=> bool | 自信と同じkeyとvalueを持っていたらtrueを返す 等値、同値
 h1 = {a: "hoge", b: "fugo"}
