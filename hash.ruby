@@ -340,3 +340,7 @@ p h.transform_keys{|key| key.to_s} #=> {"a"=>1, "b"=> 2, "c"=> 3}
 p h
 p h.transform_keys(a: "a", d: "d") # => {"a"=>1, :b=>2, :c=>3}
 p h.transform_keys.with_index{|key, index| "#{key}.#{index}"}
+
+### transform_keys! {|key| ...} #=> self | hashのkeyを変更する 破壊的
+h = {a: 1, b: 2, c: 3}
+p h.transform_keys{|key| key.upcase}
