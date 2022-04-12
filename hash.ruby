@@ -328,3 +328,7 @@ p hash.to_h {|key, value| [key.upcase, value-32] } # => {"A"=>65, "B"=>66}
 hash = {}
 p hash.to_hash #=> {}
 p hash.to_hash == hash #=> true
+
+### to_proc #=> Proc | selfのkeyに対するvalueを返すProcオブジェクトを返す
+h = {1 => 10, 2 => 20, 3 => 30}
+[1, 2, 3].map(&h) # => [10, 20, 30]
