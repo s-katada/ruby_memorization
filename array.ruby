@@ -25,3 +25,8 @@ c = b
 b[0].upcase!
 p b #=> ["HOGE", "hoge", "hoge"]
 
+### Array.try_convert(obj) #=> (array || nil) | to_aryメソッドを使ってobjをarrayへの変換を試みている
+# このメソッドは引数が配列がどうかを確かめるために使われている
+p Array.try_convert([1]) #=> [1]
+p Array.try_convert("a") #=> nil
+
