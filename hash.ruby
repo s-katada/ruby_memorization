@@ -332,3 +332,11 @@ p hash.to_hash == hash #=> true
 ### to_proc #=> Proc | selfのkeyに対するvalueを返すProcオブジェクトを返す
 h = {1 => 10, 2 => 20, 3 => 30}
 [1, 2, 3].map(&h) # => [10, 20, 30]
+
+### transform_keys {|key| ... } #=> hash | すべてのkeyに対してブロックを呼び出した結果に置き換える
+# valueは変わらない
+h = {a: 1, b: 2, c: 3}
+p h.transform_keys{|key| key.to_s} #=> {"a"=>1, "b"=> 2, "c"=> 3}
+p h
+p h.transform_keys(a: "a", d: "d") # => {"a"=>1, :b=>2, :c=>3}
+p h.transform_keys.with_index{|key, index| "#{key}.#{index}"}
