@@ -213,3 +213,12 @@ p ary.count{ |value| value % 2 == 0 } #=> 3
 a = [["a", "b", "c"]]
 # p a.cycle {|x| puts x } #=> 無限に繰り返す
 a.cycle(2){|x| p x} #=> ["a", "b", "c"], ["a", "b", "c"]
+
+### delete(value) #=> (object || nil) || delete(value){|obj| ...} #=> obj | 指定されたvalueが存在する時selfから全て取り除く 破壊的
+# 等しいvalueが見つかった時最初にヒットしたvalueを返し、存在しない時はnilを返す
+# ブロックが与えられている時はselfにvalueが存在しなかった時にブロックを評価してその値を返す
+array = [1, 2, 3, 2, 1, 4, 6]
+p array.delete(1) #=> 1
+p array #=> [2,3,2,4,6]
+array.delete("hoge"){|x| p "#{x}にヒットする要素はありません"} #=> "hogeにヒットする要素はありません"
+
