@@ -91,3 +91,16 @@ p a #=> [0, 1, 2, 3, 4, 5, "hoge"]
 a[10] = "fugo"
 p a #=> [0, 1, 2, 3, 4, 5, "hoge", nil, nil, "fugo"]
 
+### self[range] = value #=> array | selfのrangeの範囲にあるvalueをvalueに置き換える
+# rangeが配列の範囲を超える時にはnilを埋め込む
+ary = [0, 1, 2, 3, 4, 5]
+ary[0..2] = ["a", "b"]
+p ary  # => ["a", "b", 3, 4, 5]
+
+ary = [0, 1, 2]
+ary[5..6] = "x"
+p ary  # => [0, 1, 2, nil, nil, "x"]
+
+ary = [0, 1, 2, 3, 4, 5]
+ary[1..3] = "x"
+p ary  # => [0, "x", 4, 5]
