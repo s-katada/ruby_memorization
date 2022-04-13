@@ -168,3 +168,12 @@ p ary #=> ["hoge", "fugo", "poge"]
 ary = ["hoge", "fugo", "poge"]
 ary.collect!{|value| value.upcase!}
 p ary #=> ["HOGE", "FUGO", "POGE"]
+
+### combination(n) {|c| ... } #=> (array || Enumerator) | サイズnの組み合わせを全て生成し、それを引数としてブロックを実行する 純烈と組み合わせの組み合わせ作る arrayCn
+a = [1, 2, 3, 4]
+p a.combination(1)     #=> #<Enumerator: [1, 2, 3, 4]:combination(1)>
+p a.combination(1).to_a  #=> [[1],[2],[3],[4]]
+p a.combination(2).to_a  #=> [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
+p a.combination(3).to_a  #=> [[1,2,3],[1,2,4],[1,3,4],[2,3,4]]
+p a.combination(4).to_a  #=> [[1,2,3,4]]
+p a.combination(3){|ary| p ary.map(&:to_s) } #=> ["1", "2", "3"], ["1", "2", "4"] ,["1", "3", "4"] ,["2", "3", "4"][1, 2, 3, 4]
