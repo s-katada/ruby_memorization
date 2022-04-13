@@ -104,3 +104,11 @@ p ary  # => [0, 1, 2, nil, nil, "x"]
 ary = [0, 1, 2, 3, 4, 5]
 ary[1..3] = "x"
 p ary  # => [0, "x", 4, 5]
+
+### all?{|value| ... } #=> boolean | ブロックで評価された全てのvalueが真の時trueを返す
+ary = [1,2,3,4]
+p ary.all? {|value| value > 0} #=> true
+p ary.all?{|value| value < 0 } #=> false
+p [].all?{|value| value > 0} #=> true
+p [].all?{|value| value < 0} #=> true
+
