@@ -147,3 +147,8 @@ p ary.bsearch_index{|x| x > 0} #=> 1
 p ary.bsearch_index { |x| x >=   6 } # => 2
 p ary.bsearch_index { |x| x >=  -1 } # => 0
 p ary.bsearch_index { |x| x >= 100 } # => nil
+
+### clear #=> self | 全ての要素を削除して空にする
+ary = [0,3,4,5]
+ary.clear
+p ary #=> []
