@@ -177,3 +177,12 @@ p a.combination(2).to_a  #=> [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
 p a.combination(3).to_a  #=> [[1,2,3],[1,2,4],[1,3,4],[2,3,4]]
 p a.combination(4).to_a  #=> [[1,2,3,4]]
 p a.combination(3){|ary| p ary.map(&:to_s) } #=> ["1", "2", "3"], ["1", "2", "4"] ,["1", "3", "4"] ,["2", "3", "4"][1, 2, 3, 4]
+
+### compact #=> array || compact #=> array || nil | 配列からnilを削除した配列を生成して返す
+# compact!は配列内にnilが存在しない時nilを返す
+ary = [1, nil, 2, nil, 3, nil]
+p ary.compact   #=> [1, 2, 3]
+p ary           #=> [1, nil, 2, nil, 3, nil]
+ary.compact!
+p ary           #=> [1, 2, 3]
+p ary.compact!  #=> nil
