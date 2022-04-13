@@ -163,3 +163,8 @@ p ary.equal?(ary2) #=> false
 ary = ["hoge", "fugo", "poge"]
 p ary.collect{|value| value.upcase} #=> ["HOGE", "FUGO", "POGE"]
 p ary #=> ["hoge", "fugo", "poge"]
+
+### map! | collect! #=> self | mapとcollectの破壊版
+ary = ["hoge", "fugo", "poge"]
+ary.collect!{|value| value.upcase!}
+p ary #=> ["HOGE", "FUGO", "POGE"]
