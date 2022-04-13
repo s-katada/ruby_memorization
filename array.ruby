@@ -227,3 +227,10 @@ ary = ["hoge", "fugo", "poge", 3]
 p ary.delete_at(0) #=> "hoge"
 p ary #=> ["fugo", "poge", 3]
 p ary.delete_at(100) #=> nil
+
+### delete_if{|obj| ... } #=> self | reject!{|obj| ... } #=> self || nil | valueを順番に評価し結果が真になったvalueを全て削除する
+# delete_ifは常にselfを返すが、reject!は真になるvalueが一つでもあればselfを返し、一つもなければnilを返す
+a = [0, 1, 2, 3, 4, 5]
+a.delete_if{|x| x % 2 == 0}
+p a #=> [1, 3, 5]
+p a.reject!{|x| x % 2 == 0}  #=> nil
