@@ -186,3 +186,9 @@ p ary           #=> [1, nil, 2, nil, 3, nil]
 ary.compact!
 p ary           #=> [1, 2, 3]
 p ary.compact!  #=> nil
+
+### concat(other) #=> self | selfにotherを末尾に破壊的に連結する
+ary = ["hoge", "fugo"]
+other = [1, 2, 3]
+p ary.concat(other) #=> ["hoge","fugo", 1, 2, 3]
+p ary               #=> ["hoge","fugo", 1, 2, 3]
