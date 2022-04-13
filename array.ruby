@@ -129,3 +129,13 @@ p ary #=> [1,2,3,4,5,"hoge", :fugo, "pyo"]
 ary = [[1,15], [2,25], [3,35]]
 p ary.assoc(2) #=> [2, 25]
 p ary.assoc(123) #=> nil
+
+### bsearch{|obj| ... } #=> object || nil | ブロックないの処理を二分探索方を使用して検索する
+# 要素が見つからない場合はnilを返し、元々sortしておく必要がある
+# なんか色々モードがある 公式ドキュメントを参考にする
+ary = [0, 4, 7, 10, 12]
+p ary.bsearch {|x| x >= 4 } # => 4
+p ary.bsearch {|x| x >= 6 } # => 7
+p ary.bsearch {|x| x >= -1 } # => 0
+p ary.bsearch {|x| x >= 100 } # => nil
+
