@@ -222,3 +222,8 @@ p array.delete(1) #=> 1
 p array #=> [2,3,2,4,6]
 array.delete("hoge"){|x| p "#{x}にヒットする要素はありません"} #=> "hogeにヒットする要素はありません"
 
+### delete_at(index) #=> object || nil | 指定されたindexのvalueを削除する indexが範囲外の時nilを返す
+ary = ["hoge", "fugo", "poge", 3]
+p ary.delete_at(0) #=> "hoge"
+p ary #=> ["fugo", "poge", 3]
+p ary.delete_at(100) #=> nil
