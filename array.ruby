@@ -208,3 +208,8 @@ p ary.count #=> 4
 p ary.count(2) #=> 2
 p ary2.count("hoge") #=> 2
 p ary.count{ |value| value % 2 == 0 } #=> 3
+
+### cycle(n=nil){ |obj| block } #=> nil | selfの全要素をn回(n==nilの時は無限に)繰り返しブロックを呼ぶ
+a = [["a", "b", "c"]]
+# p a.cycle {|x| puts x } #=> 無限に繰り返す
+a.cycle(2){|x| p x} #=> ["a", "b", "c"], ["a", "b", "c"]
