@@ -158,3 +158,8 @@ ary = [1,2,3,4]
 ary2 = ary.clone
 p ary.eql?(ary2) #=> true
 p ary.equal?(ary2) #=> false
+
+### map || collect #=> object | 各要素に対してブロックで評価した結果を全て含む配列を返す
+ary = ["hoge", "fugo", "poge"]
+p ary.collect{|value| value.upcase} #=> ["HOGE", "FUGO", "POGE"]
+p ary #=> ["hoge", "fugo", "poge"]
