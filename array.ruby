@@ -124,3 +124,8 @@ ary.push(4, 5)
 p ary #=> [1,2,3,4,5]
 ary.append("hoge", :fugo, "pyo")
 p ary #=> [1,2,3,4,5,"hoge", :fugo, "pyo"]
+
+### assoc(key) #=> array || nil | 配列の配列を検索してその0番目の要素が引数のkeyと等しい最初のvalueを返す
+ary = [[1,15], [2,25], [3,35]]
+p ary.assoc(2) #=> [2, 25]
+p ary.assoc(123) #=> nil
