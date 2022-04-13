@@ -118,3 +118,9 @@ ary = [1,2,3,4]
 p ary.any?{|value| value > 3} #=> true
 p ary.any?{|value| value > 4} #=> false
 
+### push(*obj) || append(*obj) #=> self | 指定されたobj達を順番に配列の末尾に追加していく
+ary = [1,2,3]
+ary.push(4, 5)
+p ary #=> [1,2,3,4,5]
+ary.append("hoge", :fugo, "pyo")
+p ary #=> [1,2,3,4,5,"hoge", :fugo, "pyo"]
