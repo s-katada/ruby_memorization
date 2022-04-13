@@ -130,7 +130,7 @@ ary = [[1,15], [2,25], [3,35]]
 p ary.assoc(2) #=> [2, 25]
 p ary.assoc(123) #=> nil
 
-### bsearch{|obj| ... } #=> object || nil | ブロックないの処理を二分探索方を使用して検索する
+### bsearch{|obj| ... } #=> object || nil | ブロック内の処理を二分探索方を使用して検索する
 # 要素が見つからない場合はnilを返し、元々sortしておく必要がある
 # なんか色々モードがある 公式ドキュメントを参考にする
 ary = [0, 4, 7, 10, 12]
@@ -139,3 +139,11 @@ p ary.bsearch {|x| x >= 6 } # => 7
 p ary.bsearch {|x| x >= -1 } # => 0
 p ary.bsearch {|x| x >= 100 } # => nil
 
+### bsearch_index{|obj| ... } #=> integer || nil | ブロック内の処理を二分探索方を使用して検索する
+# 要素が見つかった時その要素のindex番号を返し、ない時はnilを返す
+# 元々sortしておく必要がある 色々モードがある
+ary = [0, 4, 7, 10, 12]
+p ary.bsearch_index{|x| x > 0} #=> 1
+p ary.bsearch_index { |x| x >=   6 } # => 2
+p ary.bsearch_index { |x| x >=  -1 } # => 0
+p ary.bsearch_index { |x| x >= 100 } # => nil
