@@ -192,3 +192,10 @@ ary = ["hoge", "fugo"]
 other = [1, 2, 3]
 p ary.concat(other) #=> ["hoge","fugo", 1, 2, 3]
 p ary               #=> ["hoge","fugo", 1, 2, 3]
+
+### concat(*other_arrays) #=> self | other_arrayのvalueをselfの末尾に破壊的に連結する
+ary = ["hoge", "fugo"]
+other1 = [1, 2, 3]
+other2 = [4, 5, 6]
+ary.concat(other1, other2)
+p ary #=> ["hoge", "fugo", 1, 2, 3, 4, 5, 6]
