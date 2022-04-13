@@ -74,7 +74,7 @@ p a[0..-1] #=> [ "a", "b", "c", "d", "e" ]
 p a[10..11] #=> nil
 p a[2..1] #=> []
 
-### self[start, length] #=> (array || nil) | start番目からlengthこの要素を持つ配列を返す 
+### self[start, length] #=> (array || nil) | start番目からlength個のvalueを持つ配列を返す 
 a = [ "a", "b", "c", "d", "e" ]
 a[0, 1]    #=> ["a"]
 a[-1, 1]   #=> ["e"]
@@ -82,4 +82,12 @@ a[0, 10]   #=> ["a", "b", "c", "d", "e"]
 a[0, 0]    #=> []
 a[0, -1]   #=> nil
 a[10, 1]   #=> nil
+
+### self[index] = value #=> array | index番目にvalueを設定する
+# indexが配列の範囲を超える時にはnilが埋め込まれる
+a = [0, 1, 2, 3, 4, 5]
+a[6] = "hoge"
+p a #=> [0, 1, 2, 3, 4, 5, "hoge"]
+a[10] = "fugo"
+p a #=> [0, 1, 2, 3, 4, 5, "hoge", nil, nil, "fugo"]
 
