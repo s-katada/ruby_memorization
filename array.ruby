@@ -152,3 +152,9 @@ p ary.bsearch_index { |x| x >= 100 } # => nil
 ary = [0,3,4,5]
 ary.clear
 p ary #=> []
+
+### clone || dup #=> array | selfを複製した配列を返す 浅いコピー
+ary = [1,2,3,4]
+ary2 = ary.clone
+p ary.eql?(ary2) #=> true
+p ary.equal?(ary2) #=> false
