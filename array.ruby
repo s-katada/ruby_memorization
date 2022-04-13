@@ -199,3 +199,12 @@ other1 = [1, 2, 3]
 other2 = [4, 5, 6]
 ary.concat(other1, other2)
 p ary #=> ["hoge", "fugo", 1, 2, 3, 4, 5, 6]
+
+### count #=> integer || count(value) #=> integer || count{|obj| ... } | selfのvalueの数を返す
+# ブロックを渡すとブロックを評価して真になったvalueの数を返す
+ary = [1, 2, 4, 2.0]
+ary2 = ["hoge", "fugo", "hoge", "poge"]
+p ary.count #=> 4
+p ary.count(2) #=> 2
+p ary2.count("hoge") #=> 2
+p ary.count{ |value| value % 2 == 0 } #=> 3
