@@ -324,3 +324,7 @@ p a.first(4) #=> [1,2,3,4]
 ### flatten(lebel=nil) #=> array || flatten!(level=nil) #=> array || nil | selfを平坦化した配列を返す
 a = [(1..2).to_a, ("a".."c").to_a, ("hoge".."hogg").to_a]
 p a.flatten #=> [1,2,"a","b","c","hoge", "hogf","hogg"]
+
+### hash #=> integer | selfのハッシュ値を返す
+a = ["hoge", "fugo"]
+p a.hash #=> -3872394309423943127
