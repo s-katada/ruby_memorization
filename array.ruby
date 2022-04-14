@@ -256,3 +256,10 @@ a.drop(3)             #=> [4, 5, 0]
 ### drop_while{|element| ... } #=> array | ブロックを評価して最初に偽になった要素の手前を切り捨てた配列を返す
 a = [1,2,3,4,5,6]
 p a.drop_while{|num| num < 4} #=> [4,5,6]
+
+### empty? #=> boolean | selfの要素数が0の時trueを返す
+a = []
+b = ["hoge"]
+p a.empty? #=> true
+p b.empty? #=> false
+
