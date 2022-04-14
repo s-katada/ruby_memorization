@@ -343,3 +343,10 @@ p a.insert(10, "ryohutoshi") #=> [1, 2, "hoge", "fugo", "poge", 3, 4, nil, nil, 
 ### to_s || inspect #=> string | 人間が読みやすい文字に変換して返す
 a = ("hoge".."hogf").to_a
 p a.inspect #=> "[\"hoge\", \"hogf\"]"
+
+### intersect?(other(array)) #=> boolean | otherと共通のvalueが少なくとも一つあればtrueを返す
+a = [1, 2, 3]
+b = [4, 5, 3]
+c = [[2]]
+p a.intersect?(b) #=> true
+p a.intersect?(c) #=> false
