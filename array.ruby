@@ -350,3 +350,7 @@ b = [4, 5, 3]
 c = [[2]]
 p a.intersect?(b) #=> true
 p a.intersect?(c) #=> false
+
+### intersection(*other_arrays) #=> array | selfとotherの共通valueを配列として返す
+p [1,2,1,3].intersection([2,4,3], ["hoge", "guo", 3]) #=> [3]
+p [1, 2, 3].intersection([1,2,3], ["hoge", "hoge"]) #=> []
