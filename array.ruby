@@ -388,3 +388,11 @@ p a.max #=> 4
 p a.max(3) #=> [4,3,2]
 a.clear
 p a.max #=> nil
+
+### max{|a, b| ... } #=> (object || nil) || max(n){|a, b| ... } #=> array | ブロックの評価結果で各要素の大小判定を行い、最大の要素または大きい順にn位までの配列を返す
+p [].max{|a, b| a <=> b } #=> nil
+p [].max(2){|a, b| a <=> b } #=> []
+ary = %w(roland hogehogeland fugoland)
+p ary.max{ |a, b| a.object_id <=> b.object_id } #=> "fugoland"
+p ary.max(2){ |a, b| a.length <=> b.length } #=> ["hogehogeland", "fugoland"]
+
