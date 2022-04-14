@@ -263,3 +263,9 @@ b = ["hoge"]
 p a.empty? #=> true
 p b.empty? #=> false
 
+### eql?(other) #=> boolean | 各要素をそれぞれ順に評価して全要素が等しければtrueを返す
+a = ["hoge", "fugo", "poge"]
+b = ["hoge", "fugo", "poge"]
+c = ["hoge", "poge", "fugo"]
+p a.eql?(b) #=> true
+p a.eql?(c) #=> false
