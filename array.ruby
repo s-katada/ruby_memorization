@@ -305,3 +305,10 @@ p a.filter{|value| value % 3 == 0} #=> [3, 6]
 a = (1..10).to_a
 p a.select!{|value| value % 2 == 0} #=> [2,4,6,8,10]
 p a.filter!{|value| value % 2 == 0} #=> nil
+
+### find_index(value) || index(value) #=> integer || nil | 条件に一致する要素の位置を返す
+a = [1, 0, 3, 1, 3]
+p a.index(0) #=> 1
+p a.find_index(2) #=> nil
+p a.index{|value| value == 3 } #=> 2
+
