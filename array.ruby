@@ -234,3 +234,10 @@ a = [0, 1, 2, 3, 4, 5]
 a.delete_if{|x| x % 2 == 0}
 p a #=> [1, 3, 5]
 p a.reject!{|x| x % 2 == 0}  #=> nil
+
+### difference(*other_arrays) #=> array | selfからother_arraysを取り除いた配列を生成し返す
+a = [0, 1, 2, 3, 4, 5]
+ary = a.difference([2])
+p ary #=> [0, 1, 3, 4, 5]
+p [ 1, 'c', :s, 'yep' ].difference([ 1 ], [ 'a', 'c' ])    # => [:s, "yep"]
+
