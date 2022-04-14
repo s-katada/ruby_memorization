@@ -241,3 +241,10 @@ ary = a.difference([2])
 p ary #=> [0, 1, 3, 4, 5]
 p [ 1, 'c', :s, 'yep' ].difference([ 1 ], [ 'a', 'c' ])    # => [:s, "yep"]
 
+### dig(index, ...) #=> object || nil #=> self以下のネストしたオブジェクトをdigメソッドを使って再起的に参照する
+# 途中のオブジェクトがnilの時はnilを返す
+a = [[1, [2, 3]]]
+p a.dig(0, 1, 1) #=> 3
+p a.dig(0, 1, 4) #=> nil
+# p a.dig(0, 0, 0) #=> error
+p [42, {foo: :bar}].dig(1, :foo) # => :bar
