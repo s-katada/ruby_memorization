@@ -300,3 +300,8 @@ ary.clear
 a = (1..6).to_a
 p a.select{|value| value % 2 == 0} #=> [2, 4, 6]
 p a.filter{|value| value % 3 == 0} #=> [3, 6]
+
+### select! || filter! #=> self || nil | selectとfilterのそれぞれの破壊的メソッド
+a = (1..10).to_a
+p a.select!{|value| value % 2 == 0} #=> [2,4,6,8,10]
+p a.filter!{|value| value % 2 == 0} #=> nil
