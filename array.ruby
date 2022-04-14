@@ -320,3 +320,7 @@ p [].first #=> nil
 a = (1..8).to_a
 p a.first(0) #=> []
 p a.first(4) #=> [1,2,3,4]
+
+### flatten(lebel=nil) #=> array || flatten!(level=nil) #=> array || nil | selfを平坦化した配列を返す
+a = [(1..2).to_a, ("a".."c").to_a, ("hoge".."hogg").to_a]
+p a.flatten #=> [1,2,"a","b","c","hoge", "hogf","hogg"]
