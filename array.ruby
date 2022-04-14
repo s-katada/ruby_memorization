@@ -248,3 +248,8 @@ p a.dig(0, 1, 1) #=> 3
 p a.dig(0, 1, 4) #=> nil
 # p a.dig(0, 0, 0) #=> error
 p [42, {foo: :bar}].dig(1, :foo) # => :bar
+
+### drop(n) #=> array | selfを先頭からn番目までを切り取った配列を返す
+a = [1, 2, 3, 4, 5, 0]
+a.drop(3)             #=> [4, 5, 0]
+
