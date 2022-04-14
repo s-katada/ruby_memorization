@@ -339,3 +339,7 @@ a = (1..4).to_a
 a.insert(2, *["hoge", "fugo", "poge"])
 p a #=> [1, 2, "hoge", "fugo", "poge", 3, 4]
 p a.insert(10, "ryohutoshi") #=> [1, 2, "hoge", "fugo", "poge", 3, 4, nil, nil, nil, "ryohutoshi"]
+
+### to_s || inspect #=> string | 人間が読みやすい文字に変換して返す
+a = ("hoge".."hogf").to_a
+p a.inspect #=> "[\"hoge\", \"hogf\"]"
