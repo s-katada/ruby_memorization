@@ -354,3 +354,8 @@ p a.intersect?(c) #=> false
 ### intersection(*other_arrays) #=> array | selfとotherの共通valueを配列として返す
 p [1,2,1,3].intersection([2,4,3], ["hoge", "guo", 3]) #=> [3]
 p [1, 2, 3].intersection([1,2,3], ["hoge", "hoge"]) #=> []
+
+### join(separate) #=> string | 配列の要素をseparateを挟んで連結した文字列を返す
+a = ["hoge", "fugo", "poge"]
+p a.join() #=> "hogefugopoge"
+p a.join("-") #=> "hoge-fugo-poge"
