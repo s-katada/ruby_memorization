@@ -269,3 +269,10 @@ b = ["hoge", "fugo", "poge"]
 c = ["hoge", "poge", "fugo"]
 p a.eql?(b) #=> true
 p a.eql?(c) #=> false
+
+### fetch(index, ifnone) || fetch(index){|index| ... } | index番目の要素を取得する
+# ary[index]とは違いヒットしなかった時に実行する処理を記述することができる
+a = [1, 2, 3, 4, 5]
+# p a.fetch(10) #=> error
+p a.fetch(10, "無い") #=> "無い"
+p a.fetch(10){|index| "#{index}番目の要素は存在しません"}
