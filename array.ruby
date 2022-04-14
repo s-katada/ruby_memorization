@@ -296,3 +296,7 @@ ary = []
 p ary.fill(2,4){|index| index} #=> [nil, nil, 2, 3, 4, 5]
 ary.clear
 
+### select | filter{|obj| ... } #=> array | 各要素に対してブロックを評価した値がtrueのものを集めた配列を返す
+a = (1..6).to_a
+p a.select{|value| value % 2 == 0} #=> [2, 4, 6]
+p a.filter{|value| value % 3 == 0} #=> [3, 6]
