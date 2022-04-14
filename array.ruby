@@ -370,3 +370,8 @@ a = (0.. 4).to_a
 p a.last #=> 4
 a.clear
 p a.last #=> nil
+
+### last(n) #=> array || [] | selfの末尾からn個の要素から成る配列を返す
+a = (0..4).to_a
+p a.last(0) #=> []
+p a.last(2) #=> [3, 4]
