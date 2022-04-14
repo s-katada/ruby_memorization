@@ -312,3 +312,7 @@ p a.index(0) #=> 1
 p a.find_index(2) #=> nil
 p a.index{|value| value == 3 } #=> 2
 
+### first #=> object || nil | 配列の一番最初の要素を返す
+p [1234, "hoge", :fa].first #=> 1234
+p [].first #=> nil
+
