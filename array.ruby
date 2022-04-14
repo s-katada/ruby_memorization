@@ -328,3 +328,9 @@ p a.flatten #=> [1,2,"a","b","c","hoge", "hogf","hogg"]
 ### hash #=> integer | selfのハッシュ値を返す
 a = ["hoge", "fugo"]
 p a.hash #=> -3872394309423943127
+
+### include?(value) #=> boolean | selfにvalueが存在する時trueを返す
+a = (0..4).to_a
+p a.include?(2) #=> true
+p a.include?(55) #=> false
+
