@@ -375,3 +375,8 @@ p a.last #=> nil
 a = (0..4).to_a
 p a.last(0) #=> []
 p a.last(2) #=> [3, 4]
+
+### length || size #=> integer | 配列の長さを返す
+a = (0..4).to_a
+p a.size #=> 5
+p a.length #=> 5
