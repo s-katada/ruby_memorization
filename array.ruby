@@ -276,3 +276,11 @@ a = [1, 2, 3, 4, 5]
 # p a.fetch(10) #=> error
 p a.fetch(10, "無い") #=> "無い"
 p a.fetch(10){|index| "#{index}番目の要素は存在しません"}
+
+### fill(value) #=> self | 全ての要素にvalueをセットする セットする要素はvalueのコピーではなくvalue自信をセットする
+a = [1, 2, 3, 4, 5]
+p a.fill(10) #=> [10, 10, 10, 10, 10]
+b = ("a".."f").to_a
+b = b.fill("a")
+b[0].upcase!
+p b #=> ["A", "A", "A", "A", "A", "A"]
