@@ -364,3 +364,9 @@ p a.join("-") #=> "hoge-fugo-poge"
 # 破壊的
 a = (1..6).to_a
 p a.keep_if{|value| value < 4} #=>  [1, 2, 3]
+
+### last #=> object || nil | selfの最後の要素を返す 存在しない時はnilを返す
+a = (0.. 4).to_a
+p a.last #=> 4
+a.clear
+p a.last #=> nil
