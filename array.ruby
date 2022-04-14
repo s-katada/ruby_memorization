@@ -359,3 +359,8 @@ p [1, 2, 3].intersection([1,2,3], ["hoge", "hoge"]) #=> []
 a = ["hoge", "fugo", "poge"]
 p a.join() #=> "hogefugopoge"
 p a.join("-") #=> "hoge-fugo-poge"
+
+### keep_if{|value| ... } #=> self | selfから真となる要素を残し偽となる要素を削除する
+# 破壊的
+a = (1..6).to_a
+p a.keep_if{|value| value < 4} #=>  [1, 2, 3]
