@@ -401,3 +401,11 @@ p [].min #=> nil
 p [].min(100) #=> []
 p %w(hoge hog ho h).min #=> "h"
 p %w(hoge hog ho h).min(2) #=> ["h", "ho"]
+
+### min{ |a, b| a <=> b } #=> (object || nil) || min(n){ |a, b| a <=> b } | max{}の逆
+p [].min{ |a, b| a <=> b } #=> nil
+p [].min(10){ |a, b| a <=> b } #=> []
+
+ary = %w(hoge hog ho h)
+p ary.min{ |a, b| a.length <=> b.length } #=> "h"
+p ary.min(2){ |a, b| a.length <=> b.length } #=> ["h", "ho"]
