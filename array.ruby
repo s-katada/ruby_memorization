@@ -409,3 +409,9 @@ p [].min(10){ |a, b| a <=> b } #=> []
 ary = %w(hoge hog ho h)
 p ary.min{ |a, b| a.length <=> b.length } #=> "h"
 p ary.min(2){ |a, b| a.length <=> b.length } #=> ["h", "ho"]
+
+### minmax #=> [min_object, max_object] | 配列内のmaxとminの要素を要素とするサイズ2の配列を返す
+ary = %w(hogehoge hoge h hogehog hog hogeho ho hogeh )
+p ary.minmax #=> ["h", "hogehoge"]
+p ary.minmax{ |a, b| a.object_id <=> b.object_id } #=> ["hogehoge", "hogeh"]
+
