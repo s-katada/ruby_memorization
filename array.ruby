@@ -284,3 +284,15 @@ b = ("a".."f").to_a
 b = b.fill("a")
 b[0].upcase!
 p b #=> ["A", "A", "A", "A", "A", "A"]
+
+### fill(value, start, length=nil) || fill(value, range) || fill(start, length=nil) {|index| ... } #=> array | 配列に指定された範囲すべてにvalueをセットする
+# 範囲を超えた時はnilをセットする
+# 破壊的
+a = [0, 1, 2]
+p a.fill("hoge", 5..8) #=> [0, 1, 2, nil, nil,"hoge", "hoge", "hoge"]
+ary = []
+p ary.fill(1..2){|index| index} #=> [nil, 1, 2]
+ary = []
+p ary.fill(2,4){|index| index} #=> [nil, nil, 2, 3, 4, 5]
+ary.clear
+
