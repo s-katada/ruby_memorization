@@ -415,10 +415,19 @@ ary = %w(hogehoge hoge h hogehog hog hogeho ho hogeh )
 p ary.minmax #=> ["h", "hogehoge"]
 p ary.minmax{ |a, b| a.object_id <=> b.object_id } #=> ["hogehoge", "hogeh"]
 
-### none? #=> boolean | 配列の全ての要素が偽の時真を返す
+### none? #=> boolean | ブロックを指定しない時配列の全ての要素が偽の時真を返す
+# ブロックを指定した時はブロックの評価結果が全て偽の時真を返す
 ary = %w(hoge fugo poge)
 p ary.none?{|value| value.length > 5} #=> true
 p ary.none?{|value| value.length >= 4} #=> false
 p ary.none?(/o/) #=> false
 p ary.none? #=> false
 p ary.clear.none? #=> true
+
+### one? #=> boolean | ブロックを指定しない時配列の一つの要素だけが真の時真を返す
+# ブロックを指定した時はブロックの評価結果が一つの要素だけが真の時真を返す
+ary = %w(hoge fugo poge roland)
+p ary.one?{|value| value.length >= 5} #=> true
+p ary.one?{|value| value.length >= 4} #=> false
+p [nil, false, true].one? #=> true
+p [nil, true, 99].one? #=> false
