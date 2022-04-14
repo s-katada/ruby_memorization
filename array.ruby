@@ -316,3 +316,7 @@ p a.index{|value| value == 3 } #=> 2
 p [1234, "hoge", :fa].first #=> 1234
 p [].first #=> nil
 
+### first(n) #=> array | 先頭からnまでの配列を返す
+a = (1..8).to_a
+p a.first(0) #=> []
+p a.first(4) #=> [1,2,3,4]
