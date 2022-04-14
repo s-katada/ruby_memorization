@@ -380,3 +380,11 @@ p a.last(2) #=> [3, 4]
 a = (0..4).to_a
 p a.size #=> 5
 p a.length #=> 5
+
+### max #=> (object || nil) || max(n) #=> array | 配列内の最大値を返す
+# 引数に数値を渡すと大きい順にn位までの配列を返す
+a = (0..4).to_a
+p a.max #=> 4
+p a.max(3) #=> [4,3,2]
+a.clear
+p a.max #=> nil
