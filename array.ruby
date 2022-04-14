@@ -431,3 +431,5 @@ p ary.one?{|value| value.length >= 5} #=> true
 p ary.one?{|value| value.length >= 4} #=> false
 p [nil, false, true].one? #=> true
 p [nil, true, 99].one? #=> false
+
+### pack(template) #=> string | 難しいので割愛
