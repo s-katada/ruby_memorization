@@ -415,3 +415,10 @@ ary = %w(hogehoge hoge h hogehog hog hogeho ho hogeh )
 p ary.minmax #=> ["h", "hogehoge"]
 p ary.minmax{ |a, b| a.object_id <=> b.object_id } #=> ["hogehoge", "hogeh"]
 
+### none? #=> boolean | 配列の全ての要素が偽の時真を返す
+ary = %w(hoge fugo poge)
+p ary.none?{|value| value.length > 5} #=> true
+p ary.none?{|value| value.length >= 4} #=> false
+p ary.none?(/o/) #=> false
+p ary.none? #=> false
+p ary.clear.none? #=> true
