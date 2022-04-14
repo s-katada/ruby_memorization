@@ -396,3 +396,8 @@ ary = %w(roland hogehogeland fugoland)
 p ary.max{ |a, b| a.object_id <=> b.object_id } #=> "fugoland"
 p ary.max(2){ |a, b| a.length <=> b.length } #=> ["hogehogeland", "fugoland"]
 
+### min #=> (object || nil) || min(n) #=> array | maxメソッドの逆
+p [].min #=> nil
+p [].min(100) #=> []
+p %w(hoge hog ho h).min #=> "h"
+p %w(hoge hog ho h).min(2) #=> ["h", "ho"]
