@@ -443,3 +443,15 @@ p ary.permutation(2).to_a #=> [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 p ary.permutation(3).to_a #=> [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 p ary.permutation(0).to_a #=> [[]]
 p ary.permutation(10).to_a #=> []
+
+### pop #=> object || nil | selfの末尾から要素を取り除いてそれを返す 破壊的
+# 引数を指定した場合その個数だけ取り除き、それを配列で返す
+array = [1, [2, 3], 4]
+p array.pop #=> 4
+p array.pop #=> [2, 3]
+p array #=> 1
+p array.pop #=> 1
+p array.pop #=> nil
+ary = [1, 2, 3]
+p ary.pop(2) #=> [2, 3]
+p ary #=> [1]
