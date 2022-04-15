@@ -455,3 +455,8 @@ p array.pop #=> nil
 ary = [1, 2, 3]
 p ary.pop(2) #=> [2, 3]
 p ary #=> [1]
+
+### unshift(*object) || prepend(*object) #=> self | 指定されたobjectの最後から順番にselfの先頭に突っ込んでいく 破壊的
+ary = (0..3).to_a
+p ary.unshift(43,21,33) #=> [43,21,33,0,1,2,3]
+p ary.prepend("hoge", "fugo") #=> ["hoge","fugo", 43,21,33,0,1,2,3]
