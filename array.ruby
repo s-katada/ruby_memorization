@@ -433,3 +433,13 @@ p [nil, false, true].one? #=> true
 p [nil, true, 99].one? #=> false
 
 ### pack(template) #=> string | 難しいので割愛
+
+### permutation(n=self.length) #=> array | サイズnの順列を生成しそれを引数としてブロック実行する
+# 引数を省略した時は配列の要素数と同じサイズの配列を返す
+ary = (1..3).to_a #=> [1,2,3]
+p ary.permutation #=> Enumerator
+p ary.permutation(2) #=> Enumerator
+p ary.permutation(2).to_a #=> [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
+p ary.permutation(3).to_a #=> [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+p ary.permutation(0).to_a #=> [[]]
+p ary.permutation(10).to_a #=> []
