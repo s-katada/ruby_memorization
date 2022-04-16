@@ -474,3 +474,7 @@ p a.rassoc(15) #=> nil
 # 逆はselect
 a = (0..10).to_a
 p a.reject{|item| item < 5} #=> [5,6,7,8,9,10]
+
+### repeated_combination(n) { |value| ... } #=> Array | サイズnの重複組合せを全て生成し、それを引数としてブロックを実行する
+a = [1, 2, 3]
+p a.repeated_combination(2).to_a #=> [[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3]]
