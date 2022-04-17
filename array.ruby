@@ -125,7 +125,7 @@ p ary #=> [1,2,3,4,5]
 ary.append("hoge", :fugo, "pyo")
 p ary #=> [1,2,3,4,5,"hoge", :fugo, "pyo"]
 
-### assoc(key) #=> array || nil | 配列の配列を検索してその0番目の要素が引数のkeyと等しい最初のvalueを返す
+### assoc(key) #=> array || nil | 配列の配列を検索してその0番目の要素が引数と等しい最初のvalueを返す
 ary = [[1,15], [2,25], [3,35]]
 p ary.assoc(2) #=> [2, 25]
 p ary.assoc(123) #=> nil
@@ -169,7 +169,7 @@ ary = ["hoge", "fugo", "poge"]
 ary.collect!{|value| value.upcase!}
 p ary #=> ["HOGE", "FUGO", "POGE"]
 
-### combination(n) {|c| ... } #=> (array || Enumerator) | サイズnの組み合わせを全て生成し、それを引数としてブロックを実行する 純烈と組み合わせの組み合わせ作る arrayCn
+### combination(n) {|c| ... } #=> (array || Enumerator) | サイズnの組み合わせを全て生成し、それを引数としてブロックを実行する arrayCn
 a = [1, 2, 3, 4]
 p a.combination(1)     #=> #<Enumerator: [1, 2, 3, 4]:combination(1)>
 p a.combination(1).to_a  #=> [[1],[2],[3],[4]]
@@ -503,9 +503,9 @@ p [0,1,1,2,3].rindex(1) #=> 2
 p [0,0,1,2].rindex(4) #=> nil
 p [0,0,1,2,3].rindex{|value| value.eql?(0)} #=> 1
 
-### rotate(index=1) #=> array | cntで指定したindexのvalueが先頭にくる配列を返す
-# cntより前のvalueは末尾に移動する
-# cntに負の数を渡すと逆の操作を行う
+### rotate(index=1) #=> array | 引数で指定したindexのvalueが先頭にくる配列を返す
+# 引数のindexより前のvalueは末尾に移動する
+# 引数のindexに負の数を渡すと逆の操作を行う
 # rotate!は破壊的
 a = (1..4).to_a
 p a.rotate(0) #=> [1,2,3,4]
@@ -589,7 +589,7 @@ p [[1, 2], ["hoge", "fugo"], [[:hoge], [:fugo]]].transpose #=> [[1,"hoge", [:hog
 p [].transpose #=> []
 
 ### union(*ohter_arrays) #=> array | selfとother_arraysの和集合を返す 重複する要素は取り除かれる
-p ["a", "b", "c"].to_a.union(["b", "c"], ["d"]) #=> ["a", "b", "c", "d"]n
+p ["a", "b", "c"].to_a.union(["b", "c"], ["d"]) #=> ["a", "b", "c", "d"]
 
 ### uniq #=> array || unip! #=> (array || nil) | selfから重複したvalueを取り除いた配列を返す
 a = [1,2,1,2,3,3,4]
