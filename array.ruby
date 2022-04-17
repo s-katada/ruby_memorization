@@ -528,3 +528,8 @@ a = (1..4).to_a
 p a.shift #=> 1
 p a #=> [2,3,4]
 p [].shift #=> nil
+
+### shuffle #=> random | selfをシャッフルした配列を返す
+a = (1..4).to_a
+p a.shuffle #=> ランダムにシャッフルした配列 長さはselfの要素数
+p a #=> [1,2,3,4]
