@@ -482,3 +482,8 @@ p a.repeated_combination(2).to_a #=> [[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3
 ### repeated_permutation(n) { |value| ... } #=> サイズnの重複順列を全て生成しそれを引数としてブロックを実行する
 a = (1..2).to_a
 p a.repeated_permutation(a.length).to_a #=> [[1, 1], [1, 2], [2, 1], [2, 2]]
+
+### replace(another) #=> array | 配列の内容を配列anotherで入れ替える 破壊的
+a = (0..3).to_a
+a.replace([4,5])
+p a #=> [4, 5]
