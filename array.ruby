@@ -583,3 +583,7 @@ p a.take_while{|value| value <= 6} #=> [0,1,2,3,4,5,6]
 a = [[:hoge, "fugo"], [[:fugo, "fugo"], "FUGO"]]
 p a.to_h #=> {:hoge=>"fugo", [:fugo, "fugo"]=>"FUGO"}
 p ["hoge", "fugo"].to_h{|value| [value.intern, value]} #=> [:hoge=>"hoge", :fugo=>"fugo"]
+
+### transpose #=> array | 例のようないい感じの配列を返す 配列の長さは全て同じでないといけない
+p [[1, 2], ["hoge", "fugo"], [[:hoge], [:fugo]]].transpose #=> [[1,"hoge", [:hoge]], [2, "fugo", [:fugo]]]
+p [].transpose #=> []
