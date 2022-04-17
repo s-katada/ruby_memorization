@@ -536,12 +536,28 @@ p a.shuffle #=> ランダムにシャッフルした配列 長さはselfの要�
 p a #=> [1,2,3,4]
 
 ### slice(index) #=> (object || nil) | 指定されたselfの要素を返す
+# slice!は破壊的
 a = (1..10).to_a
 p a.slice(9) #=> 10
 p a.slice(100) #=> nil
 
 ### slice(start(index), length) || slice(range) #=> (array || nil) | 引数で指定された条件にあったselfを返す
+# slice!は破壊的
 a = (0..4).to_a
 p a.slice(1, 3) #=> [1,2,3]
 p a.slice(0..3) #=> [0,1,2,3]
 p a.slice(10, 2) #=> nil
+
+### sort #=> array | selfの内容を<=>演算子を使って並び替えられた配列を返す
+# ブロックを渡した時はブロック内容でsortをかける
+# sort!は破壊的
+ary1 = [ "d", "a", "e", "c", "b" ]
+p ary1.sort                             #=> ["a", "b", "c", "d", "e"]
+
+ary2 = ["9", "7", "10", "11", "8"]
+p ary2.sort                             #=> ["10", "11", "7", "8", "9"] (文字列としてソートするとこうなる)
+p ary2.sort{|a, b| a.to_i <=> b.to_i }  #=> ["7", "8", "9", "10", "11"] (ブロックを使って数字としてソート)
+
+# sort_by を使っても良い
+p ary2.sort_by{|x| x.to_i }             #=> ["7", "8", "9", "10", "11"]
+
