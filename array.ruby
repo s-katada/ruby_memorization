@@ -492,3 +492,7 @@ p a #=> [4, 5]
 a = (1..3).to_a
 p a.reverse #=> [3,2,1]
 p a #=> [1, 2, 3]
+
+### reverse_each { |item| ... } | selfを逆順からブロックを評価する
+a = (1..4).to_a
+a.reverse_each{|a| p a * 2} #=> 8, 6, 4, 2
