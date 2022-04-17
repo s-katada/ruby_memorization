@@ -520,3 +520,11 @@ a = (1..4).to_a
 p a.sample #=> random
 p a.sample(2) #=> [random, random]
 p [].sample #=> nil
+
+### shift(n) #=> (object || nil || array) | selfの先頭のvalueを取り出し返す
+# 引数を指定した場合はその個数を取り除きその配列を返す
+# 破壊的
+a = (1..4).to_a
+p a.shift #=> 1
+p a #=> [2,3,4]
+p [].shift #=> nil
