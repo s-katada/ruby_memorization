@@ -530,6 +530,12 @@ p a #=> [2,3,4]
 p [].shift #=> nil
 
 ### shuffle #=> random | selfをシャッフルした配列を返す
+# shuffle!は破壊的
 a = (1..4).to_a
 p a.shuffle #=> ランダムにシャッフルした配列 長さはselfの要素数
 p a #=> [1,2,3,4]
+
+### slice(index) #=> (object || nil) | 指定されたselfの要素を返す
+a = (1..10).to_a
+p a.slice(9) #=> 10
+p a.slice(100) #=> nil
