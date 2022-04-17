@@ -577,3 +577,9 @@ p a.take(3) #=> [0,1,2]
 ### take_while{ |value| ... } #=> array | selfが偽になるまでブロックを評価し初めてブロックになったvalueの一つ手前までの配列を返す
 a = (0..10).to_a
 p a.take_while{|value| value <= 6} #=> [0,1,2,3,4,5,6]
+
+### to_h #=> hash | selfを[key, value]のペアを配列として解析した結果をhashにして返す
+# ブロックを指定するとselfの各要素でブロックを呼びその結果をペアとして使う
+a = [[:hoge, "fugo"], [[:fugo, "fugo"], "FUGO"]]
+p a.to_h #=> {:hoge=>"fugo", [:fugo, "fugo"]=>"FUGO"}
+p ["hoge", "fugo"].to_h{|value| [value.intern, value]} #=> [:hoge=>"hoge", :fugo=>"fugo"]
