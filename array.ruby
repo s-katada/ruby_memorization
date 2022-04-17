@@ -487,3 +487,8 @@ p a.repeated_permutation(a.length).to_a #=> [[1, 1], [1, 2], [2, 1], [2, 2]]
 a = (0..3).to_a
 a.replace([4,5])
 p a #=> [4, 5]
+
+### reverse #=> array | selfの配列を逆順にした配列を返す reverse!は破壊的
+a = (1..3).to_a
+p a.reverse #=> [3,2,1]
+p a #=> [1, 2, 3]
