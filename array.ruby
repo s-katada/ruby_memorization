@@ -506,6 +506,7 @@ p [0,0,1,2,3].rindex{|value| value.eql?(0)} #=> 1
 ### rotate(index=1) #=> array | cntで指定したindexのvalueが先頭にくる配列を返す
 # cntより前のvalueは末尾に移動する
 # cntに負の数を渡すと逆の操作を行う
+# rotate!は破壊的
 a = (1..4).to_a
 p a.rotate(0) #=> [1,2,3,4]
 p a.rotate(1) #=> [2,3,4,1]
@@ -513,3 +514,9 @@ p a.rotate(2) #=> [3,4,1,2]
 p a.rotate(3) #=> [4,1,2,3]
 p a.rotate(4) #=> [1,2,3,4]
 p a.rotate(-1) #=> [4,1,2,3]
+
+### sample(n) #=> (object || nil || array) | selfの中からランダムに(引数を指定した場合n個)1個valueを取得し返す
+a = (1..4).to_a
+p a.sample #=> random
+p a.sample(2) #=> [random, random]
+p [].sample #=> nil
