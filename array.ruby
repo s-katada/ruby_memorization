@@ -496,3 +496,8 @@ p a #=> [1, 2, 3]
 ### reverse_each { |item| ... } | selfを逆順からブロックを評価する
 a = (1..4).to_a
 a.reverse_each{|a| p a * 2} #=> 8, 6, 4, 2
+
+### rindex(value) #=> (integer || nil) | 指定されたvalueと等値の最後のvalueの位置を返す 存在しいなければnilを返す
+p [0,1,1,2,3].rindex(1) #=> 2
+p [0,0,1,2].rindex(4) #=> nil
+
