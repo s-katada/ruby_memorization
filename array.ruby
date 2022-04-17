@@ -539,3 +539,9 @@ p a #=> [1,2,3,4]
 a = (1..10).to_a
 p a.slice(9) #=> 10
 p a.slice(100) #=> nil
+
+### slice(start(index), length) || slice(range) #=> (array || nil) | 引数で指定された条件にあったselfを返す
+a = (0..4).to_a
+p a.slice(1, 3) #=> [1,2,3]
+p a.slice(0..3) #=> [0,1,2,3]
+p a.slice(10, 2) #=> nil
