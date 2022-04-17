@@ -595,3 +595,8 @@ p ["a", "b", "c"].to_a.union(["b", "c"], ["d"]) #=> ["a", "b", "c", "d"]n
 a = [1,2,1,2,3,3,4]
 p a.uniq #=> [1,2,3,4]
 p [1,2,3].uniq! #=> nil
+
+### values_at(*index) #=> array | 引数で指定されたindexに対応する要素を配列で返す indexに対応する要素がなければnilを返す
+a = (0..5).to_a
+p a.values_at(1,3,4) #=> [1,3,4]
+p a.values_at(1, 3, 4, 100) #= [1,3,4,nil]
