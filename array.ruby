@@ -589,4 +589,9 @@ p [[1, 2], ["hoge", "fugo"], [[:hoge], [:fugo]]].transpose #=> [[1,"hoge", [:hog
 p [].transpose #=> []
 
 ### union(*ohter_arrays) #=> array | selfとother_arraysの和集合を返す 重複する要素は取り除かれる
-p ["a", "b", "c"].to_a.union(["b", "c"], ["d"]) #=> ["a", "b", "c", "d"]
+p ["a", "b", "c"].to_a.union(["b", "c"], ["d"]) #=> ["a", "b", "c", "d"]n
+
+### uniq #=> array || unip! #=> (array || nil) | selfから重複したvalueを取り除いた配列を返す
+a = [1,2,1,2,3,3,4]
+p a.uniq #=> [1,2,3,4]
+p [1,2,3].uniq! #=> nil
