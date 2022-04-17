@@ -498,6 +498,18 @@ a = (1..4).to_a
 a.reverse_each{|a| p a * 2} #=> 8, 6, 4, 2
 
 ### rindex(value) #=> (integer || nil) | 指定されたvalueと等値の最後のvalueの位置を返す 存在しいなければnilを返す
+# ブロックが渡された時はselfを逆から評価して最初にtrueとなったvalueの位置を返す
 p [0,1,1,2,3].rindex(1) #=> 2
 p [0,0,1,2].rindex(4) #=> nil
+p [0,0,1,2,3].rindex{|value| value.eql?(0)} #=> 1
 
+### rotate(index=1) #=> array | cntで指定したindexのvalueが先頭にくる配列を返す
+# cntより前のvalueは末尾に移動する
+# cntに負の数を渡すと逆の操作を行う
+a = (1..4).to_a
+p a.rotate(0) #=> [1,2,3,4]
+p a.rotate(1) #=> [2,3,4,1]
+p a.rotate(2) #=> [3,4,1,2]
+p a.rotate(3) #=> [4,1,2,3]
+p a.rotate(4) #=> [1,2,3,4]
+p a.rotate(-1) #=> [4,1,2,3]
