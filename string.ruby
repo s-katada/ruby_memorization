@@ -97,3 +97,9 @@ p a.slice(8, 4) #=> "poge"
 p "string"["str"] #=> "str"
 p "string".slice("ing") #=> "ing"
 p "string".slice("sing") #=> nil
+
+### self[regexp, index] || slice(regexp, index) #=> (string || nil) | 正規表現regexpにマッチする最初の部分文字列を返す
+# indexを省略したときや0の時はマッチした部分文字列全体を返す
+# マッチしない時はnilを返す
+# よくわからない
+p "hoge hogef"[/hoge/, 1] #=> nil
