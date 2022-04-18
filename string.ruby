@@ -32,7 +32,7 @@ frozen_text = + original_text
 p frozen_text.eql?(original_text) #=> true
 p frozen_text.equal?(original_text) #=> false
 
-### - self #=> (string || self) | selfがfreezeされている文字列の場合はselfを返し、freezeされていない場合は元の文字列を返す
+### - self #=> (self || string) | selfがfreezeされている文字列の場合はselfを返し、freezeされていない場合は元の文字列を返す
 # + selfの逆
 original_text = "hoge"
 unfrozen_text = - original_text
@@ -42,3 +42,10 @@ original_text.freeze
 frozen_text = - original_text
 p frozen_text.eql?(original_text) #=> true
 p frozen_text.equal?(original_text) #=> true
+
+### self << other || concat(other) #=> self | selfとotherを破壊的に連結したselfを返す
+a = "hoge"
+a << "fugo"
+p a #=> "hogefugo"
+a.concat("poge")
+p a #=> "hogefugopoge"
