@@ -14,3 +14,7 @@ p "%d月%d日" % [11, 28] #=> "11月28日"
 ### self * times #=> string | selfをtimes回繰り返した新しい文字列を返す
 p "hoge"  * 4 #=> "hogehogehogehoge"
 p "hoge" * 0 #=> ""
+
+### self + other #=> string | selfとotherが連結した新しい文字列を返す
+p "hoge" + "fugo" #=> "hogefugo"
+# p "hoge" + nil #=> "error"
