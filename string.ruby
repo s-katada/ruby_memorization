@@ -56,3 +56,13 @@ a.concat("fugo", "poge")
 p a #=> "hogefugopoge"
 a.concat(*%w(lal fajo jofa))
 p a #=> "hogefugopogelalfajojofa"
+
+### self <=> other #=> (-1 || 0 || 1) | selfとotherをASCIIコード順で比較してselfが大きい時は1を返して同じ時は0、小さい時は-1を返す
+a = "hoge"
+b = "hoge"
+c = "ioge"
+d = "fa"
+p a <=> b #=> 0
+p a <=> c #=> -1
+p a <=> d #=> 1
+
