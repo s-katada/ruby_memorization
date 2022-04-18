@@ -149,3 +149,8 @@ p s # => "BazBar"
 s = "hoge"
 s[/hoge/] = "HOGE"
 p s #=> "HOGE"
+
+### self[range] = value | rangeで指定した範囲の文字列をvalueで置き換える
+s = "hoge"
+s[3..7] = "fugo"
+p s #=> "hogefugo"
