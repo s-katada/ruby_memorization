@@ -71,3 +71,10 @@ p a <=> d #=> 1
 p "hoge" == "hoge" #=> true
 p "hoge" == "fugo" #=> false
 p "hoge" == :hoge #=> false
+
+### self =~ other #=> (integer || nil) | 正規表現otherとマッチしたindex番号を返す
+# マッチしない時はnilを返す
+a = "hoge"
+p a =~ /hoge/ #=> 0
+p a =~ /ge/ #=> 2
+p a =~ /geho/ #=> nil
