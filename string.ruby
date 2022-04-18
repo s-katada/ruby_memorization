@@ -121,3 +121,10 @@ a[2] = "n"
 p a #=> "hone"
 a [0] = "!!!"
 p a #=> "!!!one"
+
+### self[index, length] =  value | selfのindex番号目からlength個の文字をvalueに置き換える
+a = "hogefugo"
+a[0,4] = "poge"
+p a #=> "pogefugo"
+a[8, 4] = "hoge"
+p a #=> "pogefugohoge"
