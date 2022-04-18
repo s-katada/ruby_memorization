@@ -10,3 +10,7 @@ p String.try_convert({hoge: "hoge"}) #=> nil
 # argsが配列であればself % *argsと同じになる
 p "i : %d" % 23 #=> "i : 23"
 p "%d月%d日" % [11, 28] #=> "11月28日"
+
+### self * times #=> string | selfをtimes回繰り返した新しい文字列を返す
+p "hoge"  * 4 #=> "hogehogehogehoge"
+p "hoge" * 0 #=> ""
