@@ -135,7 +135,12 @@ buf = "string"
 buf["trin"] = "!!"
 p buf   # => "s!!g"
 
-### self[regexp, index] = value | 正規表現regexpのindex番目に最初の部分文字列を文字列で置き換える
+### self[regexp, index] = value | 正規表現regexpのindex番目に最初の部分文字列をvalueで置き換える
 buf = "def exec(cmd)"
 buf[/def\s+(\w+)/, 1] = "preprocess"
 p buf    # => "def preprocess(cmd)"
+
+### self[regexp, name] = value | 正規表現regexpのnameで指定した名前付きキャプチャにマッチする最初の部分文字列をvalueで置き換える
+s = "FooBar"
+s[/(?<foo>[A-Z]..)(?<bar>[A-Z]..)/, "foo"] = "Baz"
+p s # => "BazBar"
