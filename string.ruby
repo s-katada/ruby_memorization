@@ -91,3 +91,9 @@ p a.slice(100) #=> nil
 a = "hogefugopoge"
 p a[4, 4] #=> "fugo"
 p a.slice(8, 4) #=> "poge"
+
+### self[substr] || slice(substr) #=> (string || nil) | selfとsubstrを比較して一致した文字列を返す
+# 一致しなかった場合nilを返す
+p "string"["str"] #=> "str"
+p "string".slice("ing") #=> "ing"
+p "string".slice("sing") #=> nil
