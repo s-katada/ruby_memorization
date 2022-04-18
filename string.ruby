@@ -114,3 +114,10 @@ p "hogefugo"[/(?<hoge>....)(?<fugo>....)/, "fugo"] #=> "fugo"
 p "hoge"[0..2] #=> "hog"
 p "fugo".slice(0..1) #=> "fu"
 p "hoge".slice(4..10) #=> ""
+
+### self[index] = value | selfのindex番号目をvalueで置き換える
+a = "hoge"
+a[2] = "n"
+p a #=> "hone"
+a [0] = "!!!"
+p a #=> "!!!one"
