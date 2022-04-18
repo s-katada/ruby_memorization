@@ -85,3 +85,9 @@ a = "hoge"
 p a[1] #=> "o"
 p a.slice(1) #=> "o"
 p a.slice(100) #=> nil
+
+### self[index, length] || slice[index, length] #=> (string || nil) | selfのindex番目からlengthこの要素の文字列を返す
+# indexが範囲を超える場合はnilを返す
+a = "hogefugopoge"
+p a[4, 4] #=> "fugo"
+p a.slice(8, 4) #=> "poge"
