@@ -128,3 +128,9 @@ a[0,4] = "poge"
 p a #=> "pogefugo"
 a[8, 4] = "hoge"
 p a #=> "pogefugohoge"
+
+### self[substr] = value #=> substrにマッチした文字列をvalueに置き換える
+# selfが部分文字列substrを含まない時はerrorが吐き出される
+buf = "string"
+buf["trin"] = "!!"
+p buf   # => "s!!g"
