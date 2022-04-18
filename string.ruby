@@ -103,3 +103,9 @@ p "string".slice("sing") #=> nil
 # マッチしない時はnilを返す
 # よくわからない
 p "hoge hogef"[/hoge/, 1] #=> nil
+
+### self[regexp, name] || slice(regexp, name) #=> string | 正規表現regexpのnameで指定した名前付きキャプチャにマッチする最初の部分文字列を返す
+# マッチする文字列がない場合はnilを返す
+p "hogefugo"[/(?<hoge>....)(?<fugo>....)/] #=> "hogefugo"
+p "hogefugo"[/(?<hoge>....)(?<fugo>....)/, "hoge"] #=> "hoge"
+p "hogefugo"[/(?<hoge>....)(?<fugo>....)/, "fugo"] #=> "fugo"
