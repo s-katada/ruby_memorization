@@ -144,3 +144,8 @@ p buf    # => "def preprocess(cmd)"
 s = "FooBar"
 s[/(?<foo>[A-Z]..)(?<bar>[A-Z]..)/, "foo"] = "Baz"
 p s # => "BazBar"
+
+### self[regexp] = value | 正規表現regexpにマッチした部分文字列をvalueで置き換える
+s = "hoge"
+s[/hoge/] = "HOGE"
+p s #=> "HOGE"
