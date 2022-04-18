@@ -49,3 +49,10 @@ a << "fugo"
 p a #=> "hogefugo"
 a.concat("poge")
 p a #=> "hogefugopoge"
+
+### concat(*arguments) #=> self | selfに複数の文字列を破壊的に連結したselfを返す
+a = "hoge"
+a.concat("fugo", "poge")
+p a #=> "hogefugopoge"
+a.concat(*%w(lal fajo jofa))
+p a #=> "hogefugopogelalfajojofa"
