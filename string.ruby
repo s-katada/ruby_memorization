@@ -66,3 +66,8 @@ p a <=> b #=> 0
 p a <=> c #=> -1
 p a <=> d #=> 1
 
+### self == other #=> boolean | selfとotherを比較して結果を返す
+# 文字列でない時に何か処理が走るっぽい
+p "hoge" == "hoge" #=> true
+p "hoge" == "fugo" #=> false
+p "hoge" == :hoge #=> false
