@@ -134,3 +134,8 @@ p a #=> "pogefugohoge"
 buf = "string"
 buf["trin"] = "!!"
 p buf   # => "s!!g"
+
+### self[regexp, index] = value | 正規表現regexpのindex番目に最初の部分文字列を文字列で置き換える
+buf = "def exec(cmd)"
+buf[/def\s+(\w+)/, 1] = "preprocess"
+p buf    # => "def preprocess(cmd)"
