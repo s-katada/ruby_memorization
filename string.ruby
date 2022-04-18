@@ -18,3 +18,13 @@ p "hoge" * 0 #=> ""
 ### self + other #=> string | selfとotherが連結した新しい文字列を返す
 p "hoge" + "fugo" #=> "hogefugo"
 # p "hoge" + nil #=> "error"
+
+### + self #=> (string || self) | selfがfreezeされていると文字列の場合は複製を返し、freezeしていない時はされていない場合はselfを返す
+original_text = "hoge"
+unfrozen_text = + original_text
+p unfrozen_text.eql?(original_text) #=> true
+p unfrozen_text.equal?(original_text) #=> true
+original_text.freeze
+frozen_text = + original_text
+p frozen_text.eql?(original_text) #=> true
+p frozen_text.equal?(original_text) #=> false
