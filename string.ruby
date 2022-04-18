@@ -109,3 +109,8 @@ p "hoge hogef"[/hoge/, 1] #=> nil
 p "hogefugo"[/(?<hoge>....)(?<fugo>....)/] #=> "hogefugo"
 p "hogefugo"[/(?<hoge>....)(?<fugo>....)/, "hoge"] #=> "hoge"
 p "hogefugo"[/(?<hoge>....)(?<fugo>....)/, "fugo"] #=> "fugo"
+
+### self[range] || slice[range] #=> string | rangeで指定したindexの範囲に含まれる部分文字列を返す
+p "hoge"[0..2] #=> "hog"
+p "fugo".slice(0..1) #=> "fu"
+p "hoge".slice(4..10) #=> ""
