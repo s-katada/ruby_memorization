@@ -154,3 +154,7 @@ p s #=> "HOGE"
 s = "hoge"
 s[3..7] = "fugo"
 p s #=> "hogefugo"
+
+### ascii_only? #=> boolean | selfが全てASCII文字で構成されていたらtrueを返しそれ以外はfalseを返す
+p "hoge".ascii_only? #=> true
+p "ほげほげ".ascii_only? #=> false
