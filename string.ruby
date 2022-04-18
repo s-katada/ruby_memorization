@@ -78,3 +78,10 @@ a = "hoge"
 p a =~ /hoge/ #=> 0
 p a =~ /ge/ #=> 2
 p a =~ /geho/ #=> nil
+
+### self[index] || slice(index) #=> (string || nil) #=> index番目の文字列を返す
+# indexが範囲を超える場合はnilを返す
+a = "hoge"
+p a[1] #=> "o"
+p a.slice(1) #=> "o"
+p a.slice(100) #=> nil
