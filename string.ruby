@@ -228,3 +228,9 @@ p str.delete_prefix("maru") #=> "hogemaru"
 str = "hogefugo"
 p str.delete_suffix("ugo") #=> "hogef"
 p str.delete_suffix("hogefu") #=> "hogefugo"
+
+### downcase(*options) #=> string | selfの全ての大文字を小文字にした文字列を返す
+# オプションは文字コードのオプションがある
+# downcase!は破壊的で、selfかnilを返す
+str = "HOGELOIHFDLIHUFD"
+p str.downcase #=> "hogeloihfdlihufd"
