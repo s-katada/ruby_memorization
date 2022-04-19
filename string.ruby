@@ -212,3 +212,6 @@ p '123456789'.count('2-8', '^4-6')   # => 4
 ### crypt(other) #=> string | selfとotherから暗号化された文字列を返す
 p "hoge".crypt("fugo") #=> "fu2ZhJLuXz1GA"
 
+### delete(*str) #=> selfからstrを取り除いた文字列を返す
+p "123456789".delete("134562") #=> "789"
+p "123456789".delete("1-9", "^5-9") #=> "56789"
