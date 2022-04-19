@@ -261,3 +261,7 @@ p "hoge".encoding #=> #<Encoding:UTF-8>
 p "string".end_with?("ing") #=> true
 p "string".end_with?("str") #=> false
 p "string".end_with?("str", "ing") #=> true
+
+### eql?(other) #=> boolean | selfとotherが等値のときtrueを返す
+p "string".eql?("string") #=> true
+p "str".eql?("string") #=> false
