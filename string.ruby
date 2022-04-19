@@ -292,3 +292,9 @@ p "abcabc".gsub(/[bc]/, hash) #=> "aBCaBC"
 ### hash #=> integer | selfのハッシュ値を返す
 str = "hoge"
 p str.hash #=> 3089626930019793653
+
+### hex 割愛
+
+### include?(substr) #=> boolean | selfにsubstrが含まれていたらtrueを返す
+p "hoge".include?("h") #=> true
+p "hafliuhafiluuhr".include?("hafk") #=> false
