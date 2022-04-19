@@ -234,3 +234,10 @@ p str.delete_suffix("hogefu") #=> "hogefugo"
 # downcase!は破壊的で、selfかnilを返す
 str = "HOGELOIHFDLIHUFD"
 p str.downcase #=> "hogeloihfdlihufd"
+
+### dump 割愛
+
+### each_byte 割愛
+
+### each_char{ |c| ... } #=> self | 文字列の各文字に対して繰り返し処理を行う
+"hogehoge".each_char{|c| print c.upcase} #=> "HOGEHOGE"
