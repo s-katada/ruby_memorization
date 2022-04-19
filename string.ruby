@@ -319,3 +319,6 @@ p "foo".to_sym
 p "hoge".intern
 p "foo".intern.to_s #=> "foo"
 
+### length || size #=> integer | selfが何文字で構成されているかを返す
+p "hoge".length #=> 4
+p "hogehoge".size #=> 8
