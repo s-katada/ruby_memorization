@@ -369,3 +369,6 @@ p a #=> a
 # reverse!は破壊的
 a = "hoge"
 p a.reverse #=> "egoh"
+
+### rindex(pattern, index=(self.length)) #=> (integer || nil) | selfを右端からpatternにマッチする文字列を検索し、マッチした部分文字列の左端indexを返し、マッチしない時はnilを返す
+p ("hogehoge").rindex(/hoge/) #=> 4
