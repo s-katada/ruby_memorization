@@ -344,4 +344,8 @@ p "ab".next #=> "ac"
 
 ### oct 割愛
 
-### 
+### ord 割愛
+
+### partition(separate) #=> [string, string, string] | [最初にセパレータより前の部分, セパレータ, それ以降]の形式で帰ってくる
+p "hoxge".partition("x") #=> ["ho", "x", "ge"]
+p "hoge".partition("x") #=> ["hoge", "x", """]
