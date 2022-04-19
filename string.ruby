@@ -334,3 +334,9 @@ p "hoge".ljust(10, "*") #=> "hoge******"
 # 空白文字の定義は \t \r \n \f \v
 p "     hoge".lstrip #=> "hoge"
 p "hoge     ".lstrip #=> "hoge     "
+
+### match(pattern, pos) Regexp#matchと同じ 割愛
+
+### succ || next #=> string | selfの次の文字を返す
+p "90".succ #=> "91"
+p "ab".next #=> "ac"
