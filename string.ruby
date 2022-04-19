@@ -276,3 +276,8 @@ p "str".eql?("string") #=> false
 str = "hoge"
 p str.gsub(/ho../, "fugo") #=> "fugo"
 
+### gsub(pattern){|matched| ... } #=> string | selfでpatternにマッチした部分を順番にブロックに渡し評価した文字列を返す
+# 破壊的な変更を加えてもselfは変わらない
+hoge = "hoge"
+str.gsub(/ho../){|matched| matched.upcase!} #=> "hoge"
+p str #=> "hoge"
