@@ -240,4 +240,14 @@ p str.downcase #=> "hogeloihfdlihufd"
 ### each_byte 割愛
 
 ### each_char{ |c| ... } #=> self | 文字列の各文字に対して繰り返し処理を行う
-"hogehoge".each_char{|c| print c.upcase} #=> "HOGEHOGE"
+"hogehoge".each_char{|c| p c.upcase} #=> "HOGEHOGE"
+
+### each_codepoint 割愛
+
+### each_grapheme_cluster 割愛
+
+### each_line 割愛
+
+### empty? #=> boolean | selfが空文字のときtrueを返す
+p "".empty? #=> true
+p "hoge".empty? #=> false
