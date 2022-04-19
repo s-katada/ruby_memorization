@@ -213,5 +213,12 @@ p '123456789'.count('2-8', '^4-6')   # => 4
 p "hoge".crypt("fugo") #=> "fu2ZhJLuXz1GA"
 
 ### delete(*str) #=> selfからstrを取り除いた文字列を返す
+# delete!は破壊的で、戻り値はselfかnil
 p "123456789".delete("134562") #=> "789"
 p "123456789".delete("1-9", "^5-9") #=> "56789"
+
+### delete_prefix(prefix) #=> string | selfの先頭文字からprefixを削除した文字列を返す
+# delete_prefix!は破壊的で、戻り値はselfかnil
+str = "hogemaru"
+p str.delete_prefix("hoge") #=> "maru"
+p str.delete_prefix("maru") #=> "hogemaru"
