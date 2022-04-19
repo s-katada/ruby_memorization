@@ -298,3 +298,9 @@ p str.hash #=> 3089626930019793653
 ### include?(substr) #=> boolean | selfにsubstrが含まれていたらtrueを返す
 p "hoge".include?("h") #=> true
 p "hafliuhafiluuhr".include?("hafk") #=> false
+
+### index(pattern, index) #=> (integer || nil) | selfの引数indexから右に向かってpatternを検索し、マッチした部分の最初のindex番号を返す
+# マッチしない時はnilを返す
+p "hogestr".index(/str/) #=> 4
+p "hogestr".index(/str/, 2) #=> 4
+p "hogestr".index(/str/, 5) #=> nil
