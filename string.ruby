@@ -251,3 +251,8 @@ p str.downcase #=> "hogeloihfdlihufd"
 ### empty? #=> boolean | selfが空文字のときtrueを返す
 p "".empty? #=> true
 p "hoge".empty? #=> false
+
+### encode 割愛
+
+### encoding #=> Encoding | selfがどの文字コードか返す
+p "hoge".encoding #=> #<Encoding:UTF-8>
