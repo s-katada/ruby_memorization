@@ -167,3 +167,8 @@ p s.capitalize  #=> "Hoge"
 
 ### casecmp(other) #=> (-1 || 0 || 1) | <=>を使ってselfとotherを比較するが、大文字小文字の区別はしない
 p "abcd".casecmp("ABCD") #=> 0
+p "abcd".casecmp("A") #=> -1
+
+### casecmp?(other) #=> boolean | casecmpメソッドの返り値がbooleanになった版
+p "abcd".casecmp?("AbCd") #=> true
+p "abcd".casecmp?("a") #=> false
