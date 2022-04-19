@@ -322,3 +322,10 @@ p "foo".intern.to_s #=> "foo"
 ### length || size #=> integer | selfが何文字で構成されているかを返す
 p "hoge".length #=> 4
 p "hogehoge".size #=> 8
+
+### lines 割愛
+
+### ljust(width, padding=(" ")) #=> string | 長さwidthの文字列にselfを左詰めした文字列を返す
+# 引数のpaddingが設定されている時そのpaddingで詰める
+p "hoge".ljust(10) #=> "hoge      "
+p "hoge".ljust(10, "*") #=> "hoge******"
