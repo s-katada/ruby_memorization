@@ -164,3 +164,6 @@ p "ほげほげ".ascii_only? #=> false
 # capitalize!は破壊的
 s = "hoge"
 p s.capitalize  #=> "Hoge"
+
+### casecmp(other) #=> (-1 || 0 || 1) | <=>を使ってselfとotherを比較するが、大文字小文字の区別はしない
+p "abcd".casecmp("ABCD") #=> 0
