@@ -172,3 +172,8 @@ p "abcd".casecmp("A") #=> -1
 ### casecmp?(other) #=> boolean | casecmpメソッドの返り値がbooleanになった版
 p "abcd".casecmp?("AbCd") #=> true
 p "abcd".casecmp?("a") #=> false
+
+### center(width, padding=" ") #=> string | 長さwidthの文字列にselfを中央寄せした文字列を返す
+# paddingを指定するとpaddingを詰める
+p "foo".center(10) #=> "   foo    "
+p "hoge".center(10, "*") #=> "***hoge***"
