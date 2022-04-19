@@ -203,3 +203,8 @@ p a.chr #=> "a"
 a = %w(hogehoihgaslijfh).join
 a.clear
 p a #=> ""
+
+### count(*chars) #=> integer | charsで指定された文字がselfにいくつあるか数えて返す
+p "abasdafasdfadfa".count("a") #=> 6
+p "012345".count("1-3") #=> 3
+p '123456789'.count('2-8', '^4-6')   # => 4
