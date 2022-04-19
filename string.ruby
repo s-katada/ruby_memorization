@@ -364,3 +364,8 @@ p a                           # => "hello world!!!"
 a = "hoge"
 a.replace("a")
 p a #=> a
+
+### reverse #=> string | selfを左右逆転した文字列を返す
+# reverse!は破壊的
+a = "hoge"
+p a.reverse #=> "egoh"
