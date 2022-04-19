@@ -372,3 +372,9 @@ p a.reverse #=> "egoh"
 
 ### rindex(pattern, index=(self.length)) #=> (integer || nil) | selfを右端からpatternにマッチする文字列を検索し、マッチした部分文字列の左端indexを返し、マッチしない時はnilを返す
 p ("hogehoge").rindex(/hoge/) #=> 4
+
+### rjust(width, padding = " ") #=> string | 長さwidthの文字列にselfを右詰めした文字列を返す
+# paddingを設定した時は空白文字の代わりにpaddingを詰める
+a = "hoge"
+p a.rjust(10) #=> "      hoge"
+p a.rjust(10, "*") #=> "******hoge"
