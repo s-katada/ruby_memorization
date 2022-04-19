@@ -158,3 +158,9 @@ p s #=> "hogefugo"
 ### ascii_only? #=> boolean | selfが全てASCII文字で構成されていたらtrueを返しそれ以外はfalseを返す
 p "hoge".ascii_only? #=> true
 p "ほげほげ".ascii_only? #=> false
+
+### capitalize(*options) #=> string | 文字列先頭の文字を大文字にして残りは小文字にする
+# 様々なオプションが存在する String#downcaseを参照する
+# capitalize!は破壊的
+s = "hoge"
+p s.capitalize  #=> "Hoge"
