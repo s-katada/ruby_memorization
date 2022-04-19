@@ -177,3 +177,6 @@ p "abcd".casecmp?("a") #=> false
 # paddingを指定するとpaddingを詰める
 p "foo".center(10) #=> "   foo    "
 p "hoge".center(10, "*") #=> "***hoge***"
+
+### chars #=> string | selfの文字列を分解して一つ一つを要素とする配列を返す
+p "hoge".chars #=> ["h", "o", "g", "e"]
