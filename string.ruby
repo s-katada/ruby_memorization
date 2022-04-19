@@ -313,3 +313,9 @@ p "hogestr".insert(4, "poge") #=> "hogepogestr"
 # デバックの時に用いられる
 puts "hoge".inspect #=> "hoge"
 puts "hoge\n".inspect #=> "hoge\n"
+
+### intern || to_sym #=> symbol | selfに対応するシンボルを返す
+p "foo".to_sym
+p "hoge".intern
+p "foo".intern.to_s #=> "foo"
+
