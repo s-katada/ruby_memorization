@@ -184,6 +184,13 @@ p "hoge".chars #=> ["h", "o", "g", "e"]
 ### chomp #=> string | selfの末尾から改行コードをとり除いた文字列を返す
 # 取り除く改行コードは(\r \r\n \n)
 # 引数に空文字列を指定すると末尾にある改行コードを全て取り除く
+# chomp!は破壊的であり、戻り値はselfかnilを返す
 p "foo\n".chomp #=>  "foo"
 p "foo\r\n".chomp #=> "foo"
 p "foo\n\r".chomp #=> "foo\n"
+
+### chop #=> string | selfの最後の文字を取り除いた新しい文字列を返す
+# ただし文字列の終端が\r\nなら2文字取り除く
+# chop!は破壊的であり、戻り値はselfかnilを返す
+p "foo".chop #=> "fo"
+p "foo\r\n" #=> "foo"
