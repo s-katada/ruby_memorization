@@ -208,3 +208,7 @@ p a #=> ""
 p "abasdafasdfadfa".count("a") #=> 6
 p "012345".count("1-3") #=> 3
 p '123456789'.count('2-8', '^4-6')   # => 4
+
+### crypt(other) #=> string | selfとotherから暗号化された文字列を返す
+p "hoge".crypt("fugo") #=> "fu2ZhJLuXz1GA"
+
