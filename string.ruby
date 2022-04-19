@@ -180,3 +180,10 @@ p "hoge".center(10, "*") #=> "***hoge***"
 
 ### chars #=> string | selfの文字列を分解して一つ一つを要素とする配列を返す
 p "hoge".chars #=> ["h", "o", "g", "e"]
+
+### chomp #=> string | selfの末尾から改行コードをとり除いた文字列を返す
+# 取り除く改行コードは(\r \r\n \n)
+# 引数に空文字列を指定すると末尾にある改行コードを全て取り除く
+p "foo\n".chomp #=>  "foo"
+p "foo\r\n".chomp #=> "foo"
+p "foo\n\r".chomp #=> "foo\n"
