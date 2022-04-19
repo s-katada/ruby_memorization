@@ -256,3 +256,8 @@ p "hoge".empty? #=> false
 
 ### encoding #=> Encoding | selfがどの文字コードか返す
 p "hoge".encoding #=> #<Encoding:UTF-8>
+
+### end_with?(*strs) #=> boolean | selfの末尾がstrsのいづれかである時trueを返す
+p "string".end_with?("ing") #=> true
+p "string".end_with?("str") #=> false
+p "string".end_with?("str", "ing") #=> true
