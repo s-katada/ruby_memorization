@@ -308,3 +308,8 @@ p "hogestr".index(/str/, 5) #=> nil
 ### insert(index, other) #=> self | selfに引数index番目の文字列の前にotherを挿入する
 p "hogestr".insert(0, "fugo") #=> "fugohogestr"
 p "hogestr".insert(4, "poge") #=> "hogepogestr"
+
+### inspect #=> string | selfを人間が読みやすい文字列にして返す
+# デバックの時に用いられる
+puts "hoge".inspect #=> "hoge"
+puts "hoge\n".inspect #=> "hoge\n"
