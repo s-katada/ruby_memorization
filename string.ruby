@@ -359,3 +359,8 @@ p a #=> "Hello, World!"
 a = "!!!"
 p a.prepend "hello ", "world" # => "hello world!!!"
 p a                           # => "hello world!!!"
+
+### replace(str) #=> string | selfをstrで破壊的に置き換える
+a = "hoge"
+a.replace("a")
+p a #=> a
