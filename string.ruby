@@ -329,3 +329,8 @@ p "hogehoge".size #=> 8
 # 引数のpaddingが設定されている時そのpaddingで詰める
 p "hoge".ljust(10) #=> "hoge      "
 p "hoge".ljust(10, "*") #=> "hoge******"
+
+### lstrip #=> string | selfの先頭にある空白文字を全て取り除いた文字列を返す
+# 空白文字の定義は \t \r \n \f \v
+p "     hoge".lstrip #=> "hoge"
+p "hoge     ".lstrip #=> "hoge     "
