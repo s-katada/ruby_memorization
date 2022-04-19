@@ -273,15 +273,22 @@ p "str".eql?("string") #=> false
 ### grapheme_clusters 割愛
 
 ### gsub(pattern, replace) #=> string | selfでpatternにマッチする部分全てをreplaceに置き換えた文字列を返す
+# gsub!は破壊的
 str = "hoge"
 p str.gsub(/ho../, "fugo") #=> "fugo"
 
 ### gsub(pattern){|matched| ... } #=> string | selfでpatternにマッチした部分を順番にブロックに渡し評価した文字列を返す
 # 破壊的な変更を加えてもselfは変わらない
+# gsub!は破壊的
 hoge = "hoge"
 str.gsub(/ho../){|matched| matched.upcase!} #=> "hoge"
 p str #=> "hoge"
 
 ### gsub(pattern, hash) #=> string | selfがpatternにマッチした部分をハッシュのkeyにしてselfを置き換える
+# gsubは破壊的
 hash = {'b'=>'B', 'c'=>'C'}
 p "abcabc".gsub(/[bc]/, hash) #=> "aBCaBC"
+
+### hash #=> integer | selfのハッシュ値を返す
+str = "hoge"
+p str.hash #=> 3089626930019793653
