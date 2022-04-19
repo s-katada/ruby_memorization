@@ -338,5 +338,10 @@ p "hoge     ".lstrip #=> "hoge     "
 ### match(pattern, pos) Regexp#matchと同じ 割愛
 
 ### succ || next #=> string | selfの次の文字を返す
+# suc!、next!は破壊的
 p "90".succ #=> "91"
 p "ab".next #=> "ac"
+
+### oct 割愛
+
+### 
