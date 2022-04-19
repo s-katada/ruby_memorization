@@ -194,3 +194,7 @@ p "foo\n\r".chomp #=> "foo\n"
 # chop!は破壊的であり、戻り値はselfかnilを返す
 p "foo".chop #=> "fo"
 p "foo\r\n" #=> "foo"
+
+### chr #=> string | selfの最初の文字だけを含む文字列を返す
+a = %w(abcdefg).join
+p a.chr #=> "a"
