@@ -272,7 +272,7 @@ p "str".eql?("string") #=> false
 
 ### grapheme_clusters 割愛
 
-### gsub(pattern, replace) #=> string | 文字列中でpatternにマッチする部分全てをreplaceに置き換えた文字列を返す
+### gsub(pattern, replace) #=> string | selfでpatternにマッチする部分全てをreplaceに置き換えた文字列を返す
 str = "hoge"
 p str.gsub(/ho../, "fugo") #=> "fugo"
 
@@ -281,3 +281,7 @@ p str.gsub(/ho../, "fugo") #=> "fugo"
 hoge = "hoge"
 str.gsub(/ho../){|matched| matched.upcase!} #=> "hoge"
 p str #=> "hoge"
+
+### gsub(pattern, hash) #=> string | selfがpatternにマッチした部分をハッシュのkeyにしてselfを置き換える
+hash = {'b'=>'B', 'c'=>'C'}
+p "abcabc".gsub(/[bc]/, hash) #=> "aBCaBC"
