@@ -304,3 +304,7 @@ p "hafliuhafiluuhr".include?("hafk") #=> false
 p "hogestr".index(/str/) #=> 4
 p "hogestr".index(/str/, 2) #=> 4
 p "hogestr".index(/str/, 5) #=> nil
+
+### insert(index, other) #=> self | selfに引数index番目の文字列の前にotherを挿入する
+p "hogestr".insert(0, "fugo") #=> "fugohogestr"
+p "hogestr".insert(4, "poge") #=> "hogepogestr"
