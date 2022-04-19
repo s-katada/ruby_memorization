@@ -198,3 +198,8 @@ p "foo\r\n" #=> "foo"
 ### chr #=> string | selfの最初の文字だけを含む文字列を返す
 a = %w(abcdefg).join
 p a.chr #=> "a"
+
+### clear #=> self | selfをクリアにしてselfを返す
+a = %w(hogehoihgaslijfh).join
+a.clear
+p a #=> ""
