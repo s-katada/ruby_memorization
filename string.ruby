@@ -222,3 +222,9 @@ p "123456789".delete("1-9", "^5-9") #=> "56789"
 str = "hogemaru"
 p str.delete_prefix("hoge") #=> "maru"
 p str.delete_prefix("maru") #=> "hogemaru"
+
+### delete_suffix(suffix) #=> string | selfの末尾からsuffixを削除した文字列を返す
+# delete_suffix!は破壊的で、selfかnilを返す
+str = "hogefugo"
+p str.delete_suffix("ugo") #=> "hogef"
+p str.delete_suffix("hogefu") #=> "hogefugo"
