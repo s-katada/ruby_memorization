@@ -352,4 +352,10 @@ p "hoge".partition("x") #=> ["hoge", "x", """]
 
 ### prepend(other_string) #=> string | selfの先頭にother_stringを破壊的に追加する
 a = "World!"
-p a.prepend("Hello, ")
+p a.prepend("Hello, ") #=> "Hello, World!"
+p a #=> "Hello, World!"
+
+### prepend(*arguments) #=> 複数の文字列をselfの先頭に破壊的に追加する
+a = "!!!"
+p a.prepend "hello ", "world" # => "hello world!!!"
+p a                           # => "hello world!!!"
