@@ -265,3 +265,14 @@ p "string".end_with?("str", "ing") #=> true
 ### eql?(other) #=> boolean | selfとotherが等値のときtrueを返す
 p "string".eql?("string") #=> true
 p "str".eql?("string") #=> false
+
+### force_encoding 割愛
+
+### getbyte 割愛
+
+### grapheme_clusters 割愛
+
+### gsub(pattern, replace) #=> string | 文字列中でpatternにマッチする部分全てをreplaceに置き換えた文字列を返す
+str = "hoge"
+p str.gsub(/ho../, "fugo") #=> "fugo"
+
