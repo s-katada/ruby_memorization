@@ -382,3 +382,14 @@ p a.rjust(10, "*") #=> "******hoge"
 ### rpartition(separate) #=> [string, string, string] | partitionメソッドの後ろから見るversion
 a = "hogexfuxgo"
 p a.rpartition("x") #=> ["hogexfu", "x", "go"]
+
+### rstrip #=> string | 文字列の末尾にある空白文字を全て取り除いた新しい文字列を返す
+# lstripの逆
+# lstrip!は破壊的
+str = "  abc\n"
+p str.rstrip   # => "  abc"
+
+### scanf(pattern) #=> [[string], ... ] | selfに対してpatternマッチを繰り返しその結果を配列にして返す
+a = "hogehoge"
+p a.scan(/../) #=> [["ho"], ["ge"], ["ho"], ["ge"]]
+
