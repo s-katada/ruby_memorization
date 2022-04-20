@@ -389,7 +389,10 @@ p a.rpartition("x") #=> ["hogexfu", "x", "go"]
 str = "  abc\n"
 p str.rstrip   # => "  abc"
 
-### scanf(pattern) #=> [[string], ... ] | selfに対してpatternマッチを繰り返しその結果を配列にして返す
+### scan(pattern) #=> [[string], ... ] | selfに対してpatternマッチを繰り返しその結果を配列にして返す
 a = "hogehoge"
 p a.scan(/../) #=> [["ho"], ["ge"], ["ho"], ["ge"]]
 
+### scan(pattern) {|matched| ... } #=> self | selfに対してpatternマッチを繰り返しその結果をブロックに渡してブロックを実行する
+a = "hogehoge"
+a.scan("ho"){ |matched| p matched } #=> "ho", "ho"
