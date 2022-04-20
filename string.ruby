@@ -396,3 +396,14 @@ p a.scan(/../) #=> [["ho"], ["ge"], ["ho"], ["ge"]]
 ### scan(pattern) {|matched| ... } #=> self | selfに対してpatternマッチを繰り返しその結果をブロックに渡してブロックを実行する
 a = "hogehoge"
 a.scan("ho"){ |matched| p matched } #=> "ho", "ho"
+
+### scrub 割愛
+
+### setbyte 割愛
+
+### slice! #=> string | 指定した範囲のを取り除いた文字列を返す
+str = "this is a string"
+str.slice!("thi")
+p str #=> "s is a string"
+
+### 
