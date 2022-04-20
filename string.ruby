@@ -378,3 +378,7 @@ p ("hogehoge").rindex(/hoge/) #=> 4
 a = "hoge"
 p a.rjust(10) #=> "      hoge"
 p a.rjust(10, "*") #=> "******hoge"
+
+### rpartition(separate) #=> [string, string, string] | partitionメソッドの後ろから見るversion
+a = "hogexfuxgo"
+p a.rpartition("x") #=> ["hogexfu", "x", "go"]
