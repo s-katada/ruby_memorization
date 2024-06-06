@@ -1,4 +1,16 @@
-ubuntu-server% which dotnet
-/usr/bin/dotnet
-ubuntu-server% echo $PATH
-/home/ubuntu/.asdf/shims:/usr/local/asdf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/ubuntu/.dotnet/tools:/home/ubuntu/.fzf/bin
+ubuntu-server% dotnet publish
+You must install or update .NET to run this application.
+
+App: /usr/share/dotnet/sdk/8.0.202/dotnet.dll
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '8.0.3' (x64)
+.NET location: /usr/share/dotnet/
+
+No frameworks were found.
+
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=8.0.3&arch=x64&rid=linux-x64&os=ubuntu.22.04
+ubuntu-server% 
