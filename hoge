@@ -1,0 +1,43 @@
+ubuntu-server% dotnet --info
+You must install or update .NET to run this application.
+
+App: /usr/share/dotnet/sdk/8.0.202/dotnet.dll
+Architecture: x64
+Framework: 'Microsoft.NETCore.App', version '8.0.3' (x64)
+.NET location: /usr/share/dotnet/
+
+No frameworks were found.
+
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=8.0.3&arch=x64&rid=linux-x64&os=ubuntu.22.04
+
+Host:
+  Version:      8.0.3
+  Architecture: x64
+  Commit:       9f4b1f5d66
+  RID:          linux-x64
+
+.NET SDKs installed:
+  7.0.407 [/usr/share/dotnet/sdk]
+  8.0.202 [/usr/share/dotnet/sdk]
+
+.NET runtimes installed:
+  No runtimes were found.
+
+Other architectures found:
+  None
+
+Environment variables:
+  DOTNET_ROOT       [/usr/share/dotnet]
+
+global.json file:
+  Not found
+
+Learn more:
+  https://aka.ms/dotnet/info
+
+Download .NET:
+  https://aka.ms/dotnet/download
