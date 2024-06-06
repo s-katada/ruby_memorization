@@ -1,0 +1,4 @@
+ubuntu-server% which dotnet
+/usr/bin/dotnet
+ubuntu-server% echo $PATH
+/home/ubuntu/.asdf/shims:/usr/local/asdf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/ubuntu/.dotnet/tools:/home/ubuntu/.fzf/bin
